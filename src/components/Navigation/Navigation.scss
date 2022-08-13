@@ -1,0 +1,62 @@
+.navigation-wrp {
+  position: sticky;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  padding: 3px;
+  margin: 0 auto;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(204, 204, 204, 0.66);
+  box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+
+  &__item {
+    display: block;
+    padding: 13px 15px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: #333333;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background: #b3b3b3;
+      transition: 0.3s ease-in-out;
+    }
+
+    &--active {
+      box-shadow: -6px -6px 4px rgba(255, 255, 255, 0.16), 6px 6px 11px rgba(51, 51, 51, 0.08);
+      background: #ffffff;
+
+      &:hover {
+        background: #ffffff;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
+    &--discuss-prj {
+      background: #175cf5;
+      color: #ffffff;
+
+      &:hover {
+        background: #0a84ff;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__spacer {
+    width: 1px;
+    height: 30px;
+    background: #b3b3b3;
+    margin: 0 5px;
+  }
+}
