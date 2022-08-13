@@ -3,8 +3,10 @@ import andImg from '../../assets/images/handwritte/and.svg'
 import designersImg from '../../assets/images/handwritte/designers.svg'
 import managersImg from '../../assets/images/handwritte/managers.svg'
 import weImg from '../../assets/images/handwritte/we.svg'
+import ourImg from '../../assets/images/handwritte/our.svg'
 import whoImg from '../../assets/images/handwritte/who.svg'
 import Navigation from "../../components/Navigation/Navigation";
+import HowWeWork from "../../components/HowWeWork/HowWeWork";
 
 function Tst () {
 
@@ -43,7 +45,7 @@ function Tst () {
                 <section className={'who-is-there'}>
                     <h4 className={'who-is-there__title'}>
                         <img src={whoImg} alt={'Кто'}/>
-                        здесь
+                        здесь ⋅
                     </h4>
                     <div className={'who-is-there__img-box'}>
                         <div className={'worker-card'}>
@@ -75,6 +77,8 @@ function Tst () {
                         </span>
                     </div>
                 </section>
+
+                <HowWeWork/>
 
                 <Navigation/>
 

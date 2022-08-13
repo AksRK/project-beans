@@ -1,12 +1,6 @@
-.navigation-wrp {
+.nav {
   position: sticky;
   bottom: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.nav {
   padding: 3px;
   margin: 0 auto;
   display: inline-flex;
@@ -14,7 +8,7 @@
   align-items: center;
   background: rgba(204, 204, 204, 0.66);
   box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
   border-radius: 10px;
 
   &__item {

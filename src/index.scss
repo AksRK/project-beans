@@ -42,7 +42,7 @@ code {
   position: relative;
   width: 100%;
   height: calc(100vh - 47px);
-  background: white;
+  background: #E8E8E8;
   border-radius: 30px;
   padding: 20px 57px;
   display: flex;
@@ -63,9 +63,22 @@ code {
   padding-bottom: 3px;
   border-bottom: 1px solid #b5b5b5;
 
+
   &:hover {
     color: #333333;
     transition: 0.3s ease-in-out;
 
   }
+
+}
+
+.section-title {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150.8%;
+  color: #333333;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0 15px;
 }
