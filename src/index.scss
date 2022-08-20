@@ -34,6 +34,13 @@ code {
 .container {
   width: 1234px;
   margin: 0 auto;
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
 
 }
 
@@ -42,37 +49,84 @@ code {
   position: relative;
   width: 100%;
   height: calc(100vh - 47px);
-  background: #E8E8E8;
-  border-radius: 30px;
-  padding: 20px 57px;
   display: flex;
   flex-direction: column;
+  border-radius: 30px 30px 0 0;
 
   &::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
+
+  &__item {
+    background: #f5f5f7;
+    padding: 20px 57px;
+    border-radius: 0 0 30px 30px;
+
+    &--black {
+      background: #000000;
+    }
+  }
+
+  &-item-bottom {
+    height: 45px;
+    background: #E8E8E8;
+    border-radius: 30px;
+  }
 }
 
 .link {
+  position: relative;
   font-weight: 400;
   font-size: 17px;
   line-height: 20px;
   color: #828282;
   transition: 0.3s ease-in-out;
-  padding-bottom: 3px;
-  border-bottom: 1px solid #b5b5b5;
+  cursor: pointer;
 
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -3%;
+    width: 100%;
+    border-bottom: 1px solid #828282;
+    transition: 0.3s ease-in-out;
+  }
 
   &:hover {
     color: #333333;
     transition: 0.3s ease-in-out;
 
+    &::before {
+      border-color: #333333;
+      transition: 0.3s ease-in-out;
+    }
   }
+
+  &--blue-dtd {
+    color: #175CF5;
+
+    &::before {
+      border-bottom: 1px dashed rgba(23, 92, 245, 0.4);
+    }
+  }
+}
+
+.page-title {
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 63px;
+  color: #333333;
+  display: inline-flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 39px;
 
 }
 
 .section-title {
+  max-width: 168px;
   font-weight: 400;
   font-size: 22px;
   line-height: 150.8%;
@@ -81,4 +135,39 @@ code {
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 0 15px;
+}
+
+.opacity-animated {
+
+  animation: 1s opacity-animated;
+}
+
+.decor-line {
+  position: absolute;
+  left: 5%;
+  border-radius: 28px;
+  min-height: 15px;
+  z-index: 3;
+
+  &--grey {
+    background-color: #E8E8E8;
+  }
+
+  &--dark-grey {
+    background-color: #333333;
+  }
+
+  &--blue {
+    background-color: #175CF5;
+  }
+}
+
+@keyframes opacity-animated {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
