@@ -8,7 +8,7 @@ function Table({table}) {
         tableDom.classList.add('opacity-animated')
         const timeout = setTimeout(() => {
             tableDom.classList.remove('opacity-animated')
-        }, 500)
+        }, 1000)
 
     }, [table])
 

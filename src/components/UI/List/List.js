@@ -7,7 +7,7 @@ function List({list}) {
         listDom.classList.add('opacity-animated')
         const timeout = setTimeout(() => {
             listDom.classList.remove('opacity-animated')
-        }, 500)
+        }, 1000)
 
     }, [list])
 

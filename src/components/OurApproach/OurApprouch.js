@@ -8,7 +8,7 @@ import TableGraphical from "../UI/TableGraphic/TableGraphical";
 function OurApprouch() {
     const [radioId, setRadioId] = useState(0)
     const [sprint, setSprint] = useState(true)
-    const radioPlateWidth = 110
+    const radioMarginLeft = 111
 
 
     let radioMenuValue = [
@@ -70,11 +70,23 @@ function OurApprouch() {
     ]
 
     function styleRadioPlate() {
-        const margin = radioId * radioPlateWidth
+        const margin = radioId * radioMarginLeft
         if (radioId === 0) {
             return '3px'
+        }else if (radioId === 1) {
+            return radioMarginLeft + 'px'
         }else {
-            return margin+'px'
+            return margin - 3 + 'px'
+        }
+    }
+
+    function styleRadioLine() {
+        if (radioId === 0) {
+            return {left: '218px'}
+        }else if (radioId === radioMenuValue.indexOf(radioMenuValue.at(-1))) {
+            return {left: '110px'}
+        }else {
+            return {opacity: '0'}
         }
     }
 
@@ -113,6 +125,7 @@ function OurApprouch() {
                             sprint ?
                                 <>
                                     <ul className={'radio-menu'}>
+                                        <div className={'radio-menu__line'} style={styleRadioLine()}></div>
                                         <div className={'radio-menu__plate'} style={{left: styleRadioPlate()}}></div>
                                         {
                                             radioMenuValue.map((element) => {
@@ -120,8 +133,7 @@ function OurApprouch() {
                                                 return (
                                                     <li onClick={() => {setRadioId(element.id)}}
                                                         key={element.id}
-                                                        // className={'radio-menu__item' + (radioId === element.id ? ' radio-menu__item--active' : '')}
-                                                        className={'radio-menu__item'}
+                                                        className={'radio-menu__item' + (radioId === element.id ? ' radio-menu__item--active' : '')}
                                                     >
                                                         <span>{element.value}</span>
                                                     </li>
