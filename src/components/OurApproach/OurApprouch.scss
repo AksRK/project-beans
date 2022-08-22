@@ -20,7 +20,7 @@
 
 .method-info-box {
   width: 100%;
-  height: 534px;
+  height: 571px;
   background: #E8E8E8;
   border-radius: 23px;
   display: flex;
@@ -34,6 +34,10 @@
     font-size: 52px;
     line-height: 63px;
     color: #333333;
+
+    &--white {
+      color: #FFFFFF;
+    }
   }
 
   &__text {
@@ -52,7 +56,10 @@
     &--small {
       color: #333333;
       font-size: 17px;
+    }
 
+    &--white {
+      color: #FFFFFF;
     }
   }
 
@@ -63,14 +70,28 @@
     display: flex;
     flex-direction: column;
     gap: 9px 0;
+
+    &--padding-top-20px{
+      padding-top: 20px;
+    }
   }
 
   &--margin-top {
     margin-top: 21px;
   }
+
+  &--blue {
+    background: #175CF5;
+    color: #FFFFFF;
+  }
+
+  &--dark {
+    background: #333333;
+  }
 }
 
 .tabs-panel {
+  overflow: hidden;
   position: relative;
   width: 377px;
   height: 100%;
@@ -100,6 +121,14 @@
       margin-top: 40px;
     }
   }
+
+  &--lght-silver {
+    background: #E8E8E8;
+  }
+
+  &--padding-8px {
+    padding: 8px;
+  }
 }
 
 .radio-menu {
@@ -110,11 +139,11 @@
   padding: 3px;
   background-color: #E8E8E8;
   border-radius: 11px;
-  gap: 0 3px;
+  gap: 0 5px;
 
   &__item {
     position: relative;
-    width: 105px;
+    width: 103px;
     min-height: 45px;
     padding: 9px 0;
     display: flex;
@@ -149,7 +178,7 @@
   &__plate {
     position: absolute;
     left: 3px;
-    width: 105px;
+    width: 103px;
     height: 45px;
     background: #FFFFFF;
     box-shadow: -6px -6px 4px rgba(255, 255, 255, 0.16), 6px 6px 11px rgba(51, 51, 51, 0.08);
@@ -158,4 +187,103 @@
   }
 }
 
+.design-process-list {
 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px 0;
+
+  &__item {
+    overflow: hidden;
+    width: 100%;
+    max-height: 62px;
+    padding: 12px 15px;
+    background: #FFFFFF;
+    box-shadow: -6px -6px 4px rgba(255, 255, 255, 0.16), 6px 6px 11px rgba(51, 51, 51, 0.08);
+    border-radius: 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    animation: 0.6s both design-list-item-animation-close;
+
+    &--active {
+      max-height: 100%;
+      animation: 2s both design-list-item-animation-open;
+      cursor: default;
+      margin: 7px 0 7px 0;
+
+      &:first-child {
+        margin: 0 0 7px 0;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    color: #333333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 14px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      width: 100%;
+      height: 1px;
+      background: #BABABA;
+      opacity: 0;
+    }
+
+    &--underline {
+      &:before {
+        opacity: 100%;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 85%;
+    line-height: 150.8%;
+    color: #828282;
+  }
+
+  &__mark {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #175CF5;
+    color: #FFFFFF;
+    border-radius: 30%;
+
+    &--dark {
+      background: #333333;
+      transition: background-color 0.5s ease-in-out;
+    }
+  }
+}
+
+@keyframes design-list-item-animation-open {
+  from {
+    max-height: 62px;
+  }
+
+  to {
+    max-height: 100%;
+  }
+}
+
+@keyframes design-list-item-animation-close {
+  from {
+    max-height: 100%;
+  }
+
+  to {
+    max-height: 62px;
+  }
+}

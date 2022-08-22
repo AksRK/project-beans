@@ -8,7 +8,6 @@ function List({list}) {
         const timeout = setTimeout(() => {
             listDom.classList.remove('opacity-animated')
         }, 1000)
-
     }, [list])
 
 

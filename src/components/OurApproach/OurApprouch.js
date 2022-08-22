@@ -9,6 +9,7 @@ function OurApprouch() {
     const [radioId, setRadioId] = useState(0)
     const [sprint, setSprint] = useState(true)
     const radioMarginLeft = 111
+    const [designListItemId, setDesignListItemId] = useState(1)
 
 
     let radioMenuValue = [
@@ -82,13 +83,34 @@ function OurApprouch() {
 
     function styleRadioLine() {
         if (radioId === 0) {
-            return {left: '218px'}
+            return {left: '216.5px'}
         }else if (radioId === radioMenuValue.indexOf(radioMenuValue.at(-1))) {
-            return {left: '110px'}
+            return {left: '108.5px'}
         }else {
             return {opacity: '0'}
         }
     }
+
+
+    const designList = [
+        {id: 1,
+        title: 'Проблема',
+        value: 'Погружение в задачу, анализ конкурентов, ' +
+               'исследование пользователей и их потребностей, ' +
+               'продуктовый план, постановка проблем.'},
+        {id: 2,
+            title: 'Решение',
+            value: 'JTBD, CJM, скетчи, построение гипотез, их описание, опрос, оценка отношения к идеям.'},
+        {id: 3,
+            title: 'Реализация',
+            value: `Прототип, дизайн-макеты, юзабилити- тестирование, дизайн-критика, отчет.`},
+        {id: 4,
+            title: 'Запуск первой версии',
+            value: 'Выкатка на рынок и тестирование, оценка и обновленная CJM.'},
+        {id: 5,
+            title: 'Цикл',
+            value: 'После теста МВП — первой работающей версии — расширяем функциональность продукта.'},
+    ]
 
     return (
         <section className={'our-approuch'}>
@@ -145,15 +167,9 @@ function OurApprouch() {
                                     <h5 className={'tabs-panel__title'}>
                                         Задача — концепт сайта
                                     </h5>
-
-
                                     <List list={listWork[radioId]}/>
-
                                     <div className={'line'}></div>
-
                                     <Table table={tableWork[radioId]}/>
-
-
                                 </>
                                 :
                                 <>
@@ -166,10 +182,71 @@ function OurApprouch() {
                                     </span>
                                 </>
                         }
+                    </div>
+                </div>
+            </section>
+
+            <section className={'method-info-box method-info-box--margin-top method-info-box--dark'}>
+                <div className={'method-info-box__item'}>
+                    <h4 className={'method-info-box__title method-info-box__title--white'}>
+                        Проектирование
+                    </h4>
+                    <div className={'method-info-box__text'}>
+                        Распутаем сложные функции и пользовательские сценарии,
+                        а после уложим все в понятный интерфейс
+                    </div>
+                    <div className={'method-info-box__text method-info-box__text--abslt-bottom'}>02</div>
+                </div>
+
+                <div className={'method-info-box__item  method-info-box__item--padding-top-20px'}>
+                    <div className={'tabs-panel tabs-panel--lght-silver tabs-panel--padding-8px'}>
 
                     </div>
+                </div>
+            </section>
 
-
+            <section className={'method-info-box method-info-box--margin-top method-info-box--blue'}>
+                <div className={'method-info-box__item'}>
+                    <h4 className={'method-info-box__title method-info-box__title--white'}>
+                        Дизайн-процесс
+                    </h4>
+                    <div className={'method-info-box__text method-info-box__text--white'}>
+                        Составим план для запуска,
+                        поделим проект на спринты, предоставим личный кабинет
+                        с прозрачными расчетами работы и для наблюдения процесса.
+                    </div>
+                    <div className={
+                        'method-info-box__text ' +
+                        'method-info-box__text--abslt-bottom ' +
+                        'method-info-box__text--white'}>
+                        03
+                    </div>
+                </div>
+                <div className={'method-info-box__item  method-info-box__item--padding-top-20px'}>
+                    <div className={'tabs-panel tabs-panel--lght-silver tabs-panel--padding-8px'}>
+                        <ul className={'design-process-list'}>
+                            {
+                                designList.map((item) => {
+                                    return (
+                                        <li onClick={() => setDesignListItemId(item.id)}
+                                            key={item.id}
+                                            className={'design-process-list__item' +
+                                                (designListItemId === item.id ? ' design-process-list__item--active': '')}>
+                                            <div className={'design-process-list__title' +
+                                                (designListItemId === item.id ? ' design-process-list__title--underline':'')}>
+                                                <span className={'design-process-list__mark' +
+                                                    (designListItemId === item.id ? ' design-process-list__mark--dark':'')}>{item.id}</span>
+                                                <span>{item.title}</span>
+                                            </div>
+                                            <span className={'design-process-list__text'}>
+                                                {item.value}
+                                            </span>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
                 </div>
             </section>
         </section>
