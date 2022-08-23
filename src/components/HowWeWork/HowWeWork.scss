@@ -44,8 +44,6 @@
       }
     }
   }
-
-
 }
 
 .work-method-list {
@@ -57,6 +55,7 @@
 
   &__item {
     width: 100%;
+    max-height: content-box;
     display: flex;
     flex-wrap: wrap;
     font-size: 22px;
@@ -65,26 +64,38 @@
     background: #ffffff;
     border: 1px solid #ECECEC;
     border-radius: 11px;
-    transition: 0.5s ease-in-out;
+    transition: all 1s ease-in-out;
+    animation: 1s both closeEvenItem;
 
     & span {
       max-width: 397px;
+      margin-top: 30px;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-top: 0;
+      }
     }
 
     &:nth-child(even) {
       flex-direction: column;
-      gap: 30px 0;
     }
 
     &--others {
+      max-height: max-content;
 
       &:nth-child(even) {
         position: relative;
-        width: 443px;
         transform: translateY(-15px);
         background: rgba(255, 255, 255, 0.8);
-        transition: width 0.5s ease-in-out, height 0.5s ease-in-out, transform 0.5s ease-in-out;
+        animation: 1s both openEvenItem;
 
+        & span {
+          &:last-child {
+            margin-top: 30px;
+          }
+        }
       }
 
       &:nth-child(odd) {
@@ -99,11 +110,64 @@
 .text {
 
   &-red {
+    max-height: 100px;
     color: #FF0200;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+    transition: all 1s ease-in-out;
+
+    &--invisible {
+      max-height: 0;
+      transition: all 1s ease-in-out;
+    }
+
+    &--margin-bottom30px {
+      display: block;
+      margin-top: 30px;
+    }
   }
 
   &-crossed-out-red {
     text-decoration: line-through;
     text-decoration-color: #FF0200;
+  }
+
+
+}
+
+@keyframes openEvenItem {
+
+  0% {
+    width: 100%;
+    transform: translateY(0);
+  }
+
+  50% {
+    width: 90%;
+    transform: translateY(0);
+  }
+
+
+  100% {
+    width: 90%;
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes closeEvenItem {
+
+  0% {
+    width: 90%;
+    transform: translateY(-15px);
+  }
+
+  50% {
+    width: 90%;
+    transform: translateY(0);
+  }
+
+  100% {
+    width: 100%;
+    transform: translateY(0);
   }
 }

@@ -5,15 +5,6 @@ import managersImg from "../../assets/images/handwritte/managers.svg";
 
 function Banner() {
 
-    function buttonInfoText() {
-
-        return (
-            <div className={'btn-info-'}>
-
-            </div>
-        )
-    }
-
     return (
         <section className={'banner'}>
             <h2 className={'page-title'}>

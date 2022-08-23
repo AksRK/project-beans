@@ -219,7 +219,7 @@
     position: relative;
     width: 30px;
     height: 30px;
-    border: 3px solid #175CF5;
+    border: 2px solid #175CF5;
     border-radius: 50%;
 
     &--checked {
@@ -229,7 +229,7 @@
         content: '';
         position: absolute;
         top:50%;
-        left:64%;
+        left:62%;
         transform:translate(-50%, -50%) rotate(305deg);
         width: 15px;
         height: 2px;
@@ -240,10 +240,10 @@
         content: '';
         position: absolute;
         top:60%;
-        left:37%;
+        left:39%;
         transform:translate(-50%, -50%) rotate(322deg);
         width: 2px;
-        height: 10px;
+        height: 8px;
         border-radius: 2px;
         background: #175CF5;
       }
@@ -278,7 +278,7 @@
     left: 120%;
     width: 100px;
     height: 50px;
-    animation: 3s both bot-click;
+    animation: 2s both bot-click;
   }
 }
 
@@ -335,7 +335,7 @@
     gap: 20px;
     cursor: pointer;
     animation: 0.8s both design-list-item-animation-close;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
     &--active {
       max-height: 100%;

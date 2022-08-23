@@ -9,8 +9,9 @@ function OurApprouch() {
     const [radioId, setRadioId] = useState(0)
     const [sprint, setSprint] = useState(true)
     const radioMarginLeft = 111
-    const [designListCheckbox, setDesignListCheckbox] = useState(1)
-    const [clickBot, setClickBot] = useState(false)
+    const [designListCheckbox, setDesignListCheckbox] = useState({1: true, 2:true, 3:true})
+    const [designListCheckboxCurrent, setDesignListCheckboxCurrent] = useState(0)
+    const [startAnimationDesignList, setStartAnimationDesignList] = useState(false)
     const [clickBotUsedCount, setClickBotUsedCount] = useState(0)
     const [designProcessListItemId, setDesignProcessListItemId] = useState(1)
 
@@ -126,17 +127,26 @@ function OurApprouch() {
     ]
 
     useEffect(() => {
-        if (clickBot) {
-            const timeout = setTimeout(() => {
-                setClickBot(false)
-                setDesignListCheckbox(1)
-                setClickBotUsedCount( clickBotUsedCount + 1)
-            }, 3000)
+        if (startAnimationDesignList) {
+            setTimeout(() => {
+                setStartAnimationDesignList(false)
+                setDesignListCheckbox({...designListCheckbox, [designListCheckboxCurrent]:true})
+            }, 2000)
         }
-        if (clickBotUsedCount === 11) {
-            setClickBotUsedCount(0)
+    }, [designListCheckbox])
+
+    function startBot(id) {
+        if (!startAnimationDesignList) {
+            setDesignListCheckbox({...designListCheckbox, [id]:false})
+            setDesignListCheckboxCurrent(id)
+            setStartAnimationDesignList(true)
+            if (clickBotUsedCount <= 10) {
+                setClickBotUsedCount(clickBotUsedCount + 1)
+            }else {
+                setClickBotUsedCount(0)
+            }
         }
-    }, [clickBot])
+    }
 
     return (
         <section className={'our-approuch'}>
@@ -232,14 +242,12 @@ function OurApprouch() {
                                 designList.map((item) => {
                                     return (
                                         <li key={item.id} className={'design-list__item'}>
-                                            <div onClick={() => setDesignListCheckbox(0) + setClickBot(true)}
-                                                 className={'design-list__checkbox' +
-                                                            (designListCheckbox === item.id ?
-                                                                ' design-list__checkbox--checked' : ' ') +
-                                                            (designListCheckbox === 0 && item.id === 1?
-                                                                ' design-list__checkbox--unchecked' : '')}>
+                                            <div onClick={()=> startBot(item.id)}
+                                                 className={'design-list__checkbox' + (designListCheckbox[item.id] ?
+                                                     ' design-list__checkbox--checked' :
+                                                     ' design-list__checkbox--unchecked' ) }>
                                                 {
-                                                    designListCheckbox === 0 && item.id === 1?
+                                                    startAnimationDesignList && designListCheckboxCurrent === item.id ?
                                                         <div className={'design-list__click-bot'}>
                                                             {clickBotUsedCount <= 2 ?
                                                                 '￢(・_・;)':
@@ -249,11 +257,9 @@ function OurApprouch() {
                                                                         '￢(-__-`)': '￢(O_O)'}
                                                         </div> : ''
                                                 }
-
                                             </div>
-                                            <div className={'design-list__text' +
-                                                (designListCheckbox === 0 && item.id === 1 ? '' +
-                                                    ' design-list__text--transparent' : '')}>
+                                            <div className={'design-list__text' + (!designListCheckbox[item.id] ?
+                                                ' design-list__text--transparent' : '')}>
                                                 <div className={'design-list__title'}>
                                                     {item.title}
                                                 </div>

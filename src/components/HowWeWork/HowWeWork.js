@@ -37,7 +37,6 @@ function HowWeWork() {
                 </div>
                 <div className={'how-we-work-content__item'}>
                     <ul className={'work-method-list'}>
-
                         <li className={addClassLi()}>
                             <span>
                                 ⋅ Знакомимся, <span className={!choice ? 'text-crossed-out-red': ''}>погружаемся в вашу
@@ -45,14 +44,9 @@ function HowWeWork() {
                                 составляем бэклог      для запуска,
                                 поделим проект на спринты.</span>
                             </span>
-
-                            {
-                                !choice ?
-                                    <span className={'text-red'}>
-                                        Получаем тз и начинаем оценивать стоимость.
-                                    </span> : <></>
-                            }
-
+                            <span className={'text-red' + (choice ? ' text-red--invisible' : '')}>
+                                Получаем тз и начинаем оценивать стоимость.
+                            </span>
                         </li>
                         <li className={addClassLi()}>
                             <span>
@@ -68,17 +62,16 @@ function HowWeWork() {
                                     !choice ? <span className={'text-red'}>?</span> : '.'
                                 }
                             </span>
-                            {
-                                !choice ? <span className={'text-red'}>
-                                            Нет, мы составим план максимум, чтоб заработать как можно больше. ¯\_(ツ)_/¯
-                                        </span>: ''
-                            }
+
+                            <span className={'text-red' + (choice ? ' text-red--invisible' : '')}>
+                                    Нет, мы составим план максимум, чтоб заработать как можно больше. ¯\_(ツ)_/¯
+                            </span>
                         </li>
                         <li className={addClassLi()}>
                             <span>⋅ Превратим ваш проект в МВП.</span>
-                            {
-                                !choice ?  <span className={'text-red'}>Проект раздувается и становится неуправляемым.</span>: ''
-                            }
+                            <span className={'text-red' + (choice ? ' text-red--invisible' : '')}>
+                                Проект раздувается и становится неуправляемым
+                            </span>
                         </li>
                         <li className={addClassLi()}>
                             <span>
@@ -86,11 +79,10 @@ function HowWeWork() {
                             улучшаем и развиваем работающую
                             систему.
                             </span>
-                            {
-                                !choice ?  <span className={'text-red'}>КАК?? Хаааааааоооооооос!!!</span>: ''
-                            }
+                            <span className={'text-red' + (choice ? ' text-red--invisible' : '')}>
+                                КАК?? Хаааааааоооооооос!!!
+                            </span>
                         </li>
-
                     </ul>
                 </div>
             </div>
