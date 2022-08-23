@@ -122,6 +122,14 @@
     }
   }
 
+  &--no-background {
+    background: none;
+  }
+
+  &--no-padding {
+    padding: 0;
+  }
+
   &--lght-silver {
     background: #E8E8E8;
   }
@@ -187,6 +195,126 @@
   }
 }
 
+.design-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px 0;
+
+  &__item {
+    width: 100%;
+    padding: 12px 17px;
+    background: #FFFFFF;
+    //тени колбасит
+    border-radius: 23px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 25px;
+
+  }
+
+  &__checkbox {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #175CF5;
+    border-radius: 50%;
+
+    &--checked {
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top:50%;
+        left:64%;
+        transform:translate(-50%, -50%) rotate(305deg);
+        width: 15px;
+        height: 2px;
+        border-radius: 2px;
+        background: #175CF5;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top:60%;
+        left:37%;
+        transform:translate(-50%, -50%) rotate(322deg);
+        width: 2px;
+        height: 10px;
+        border-radius: 2px;
+        background: #175CF5;
+      }
+    }
+
+    &--unchecked {
+      border-color: #FF0200;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    color: #333333;
+  }
+
+  &__text {
+    flex: 0 0 80%;
+    line-height: 150.8%;
+    color: #828282;
+    transition: all 0.5s ease-in-out;
+
+    &--transparent {
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  &__click-bot {
+    position: absolute;
+    top: 0;
+    left: 120%;
+    width: 100px;
+    height: 50px;
+    animation: 3s both bot-click;
+  }
+}
+
+@keyframes bot-click {
+  0% {
+    opacity: 0;
+    transform: translateX(400%);
+  }
+
+  15% {
+    opacity: 0;
+    transform: translateX(300%);
+  }
+
+  75% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(-20%);
+  }
+
+  85% {
+    transform: translateX(0);
+  }
+  95% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
 .design-process-list {
 
   width: 100%;
@@ -206,11 +334,13 @@
     flex-direction: column;
     gap: 20px;
     cursor: pointer;
-    animation: 0.6s both design-list-item-animation-close;
+    animation: 0.8s both design-list-item-animation-close;
+    transition: all 0.8s ease-in-out;
 
     &--active {
       max-height: 100%;
       animation: 2s both design-list-item-animation-open;
+      transition: all 0.5s ease-in-out;
       cursor: default;
       margin: 7px 0 7px 0;
 

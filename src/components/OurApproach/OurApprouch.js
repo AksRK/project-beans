@@ -1,6 +1,6 @@
 import ourImg from '../../assets/images/handwritte/our.svg'
 import './OurApprouch.scss'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Table from "../UI/Table/Table";
 import List from "../UI/List/List";
 import TableGraphical from "../UI/TableGraphic/TableGraphical";
@@ -9,7 +9,10 @@ function OurApprouch() {
     const [radioId, setRadioId] = useState(0)
     const [sprint, setSprint] = useState(true)
     const radioMarginLeft = 111
-    const [designListItemId, setDesignListItemId] = useState(1)
+    const [designListCheckbox, setDesignListCheckbox] = useState(1)
+    const [clickBot, setClickBot] = useState(false)
+    const [clickBotUsedCount, setClickBotUsedCount] = useState(0)
+    const [designProcessListItemId, setDesignProcessListItemId] = useState(1)
 
 
     let radioMenuValue = [
@@ -91,8 +94,18 @@ function OurApprouch() {
         }
     }
 
-
     const designList = [
+        {id:1 , title:'Паспорт проекта',
+            value: 'Стартуем с документа, закрепляя цели и смысл задачи, ' +
+                   'чтоб не потерять суть в процессе работы.'},
+        {id:2 , title:'Пользовательские сценарии',
+            value: 'Оптимизируем и структурируем пользовательский путь в блок-схемы.'},
+        {id:3 , title:'Прототипирование',
+            value: 'Проектируем всю вложенность проекта, начиная с MVP версии, с планом ее развития.'},
+
+    ]
+
+    const designProcessList = [
         {id: 1,
         title: 'Проблема',
         value: 'Погружение в задачу, анализ конкурентов, ' +
@@ -111,6 +124,19 @@ function OurApprouch() {
             title: 'Цикл',
             value: 'После теста МВП — первой работающей версии — расширяем функциональность продукта.'},
     ]
+
+    useEffect(() => {
+        if (clickBot) {
+            const timeout = setTimeout(() => {
+                setClickBot(false)
+                setDesignListCheckbox(1)
+                setClickBotUsedCount( clickBotUsedCount + 1)
+            }, 3000)
+        }
+        if (clickBotUsedCount === 11) {
+            setClickBotUsedCount(0)
+        }
+    }, [clickBot])
 
     return (
         <section className={'our-approuch'}>
@@ -199,8 +225,45 @@ function OurApprouch() {
                 </div>
 
                 <div className={'method-info-box__item  method-info-box__item--padding-top-20px'}>
-                    <div className={'tabs-panel tabs-panel--lght-silver tabs-panel--padding-8px'}>
+                    <div className={'tabs-panel tabs-panel--no-background tabs-panel--no-padding'}>
 
+                        <ul className={'design-list'}>
+                            {
+                                designList.map((item) => {
+                                    return (
+                                        <li key={item.id} className={'design-list__item'}>
+                                            <div onClick={() => setDesignListCheckbox(0) + setClickBot(true)}
+                                                 className={'design-list__checkbox' +
+                                                            (designListCheckbox === item.id ?
+                                                                ' design-list__checkbox--checked' : ' ') +
+                                                            (designListCheckbox === 0 && item.id === 1?
+                                                                ' design-list__checkbox--unchecked' : '')}>
+                                                {
+                                                    designListCheckbox === 0 && item.id === 1?
+                                                        <div className={'design-list__click-bot'}>
+                                                            {clickBotUsedCount <= 2 ?
+                                                                '￢(・_・;)':
+                                                                clickBotUsedCount <= 6 ?
+                                                                    '￢(-_-;)' :
+                                                                    clickBotUsedCount <= 9 ?
+                                                                        '￢(-__-`)': '￢(O_O)'}
+                                                        </div> : ''
+                                                }
+
+                                            </div>
+                                            <div className={'design-list__text' +
+                                                (designListCheckbox === 0 && item.id === 1 ? '' +
+                                                    ' design-list__text--transparent' : '')}>
+                                                <div className={'design-list__title'}>
+                                                    {item.title}
+                                                </div>
+                                                {item.value}
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -226,16 +289,16 @@ function OurApprouch() {
                     <div className={'tabs-panel tabs-panel--lght-silver tabs-panel--padding-8px'}>
                         <ul className={'design-process-list'}>
                             {
-                                designList.map((item) => {
+                                designProcessList.map((item) => {
                                     return (
-                                        <li onClick={() => setDesignListItemId(item.id)}
+                                        <li onClick={() => setDesignProcessListItemId(item.id)}
                                             key={item.id}
                                             className={'design-process-list__item' +
-                                                (designListItemId === item.id ? ' design-process-list__item--active': '')}>
+                                                (designProcessListItemId === item.id ? ' design-process-list__item--active': '')}>
                                             <div className={'design-process-list__title' +
-                                                (designListItemId === item.id ? ' design-process-list__title--underline':'')}>
+                                                (designProcessListItemId === item.id ? ' design-process-list__title--underline':'')}>
                                                 <span className={'design-process-list__mark' +
-                                                    (designListItemId === item.id ? ' design-process-list__mark--dark':'')}>{item.id}</span>
+                                                    (designProcessListItemId === item.id ? ' design-process-list__mark--dark':'')}>{item.id}</span>
                                                 <span>{item.title}</span>
                                             </div>
                                             <span className={'design-process-list__text'}>
