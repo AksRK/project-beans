@@ -39,7 +39,8 @@ function HowWeWork() {
                     <ul className={'work-method-list'}>
                         <li className={addClassLi()}>
                             <span>
-                                ⋅ Знакомимся, <span className={!choice ? 'text-crossed-out-red': ''}>погружаемся в вашу
+                                <span className={'work-method-list__dot'}></span>
+                                Знакомимся, <span className={!choice ? 'text-crossed-out-red': ''}>погружаемся в вашу
                                 задачу, определяем «главное» и
                                 составляем бэклог      для запуска,
                                 поделим проект на спринты.</span>
@@ -50,14 +51,14 @@ function HowWeWork() {
                         </li>
                         <li className={addClassLi()}>
                             <span>
-                                ⋅ Предоставим минимальную
+                                <span className={'work-method-list__dot'}></span>
+                                Предоставим минимальную
                                 команду и поставим ей задачу
-                                {
-                                    !choice ? <span className={'text-red'}>?</span> : '.'
-                                }
+                                <span className={'text' + (!choice ? ' text-red': '')}>{choice ? '.' : '?'}</span>
                             </span>
                             <span>
-                                ⋅ Определим минимальный бюджет
+                                <span className={'work-method-list__dot'}></span>
+                                Определим минимальный бюджет
                                 {
                                     !choice ? <span className={'text-red'}>?</span> : '.'
                                 }
@@ -68,16 +69,20 @@ function HowWeWork() {
                             </span>
                         </li>
                         <li className={addClassLi()}>
-                            <span>⋅ Превратим ваш проект в МВП.</span>
+                            <span>
+                                <span className={'work-method-list__dot'}></span>
+                                Превратим ваш проект в МВП.
+                            </span>
                             <span className={'text-red' + (choice ? ' text-red--invisible' : '')}>
                                 Проект раздувается и становится неуправляемым
                             </span>
                         </li>
                         <li className={addClassLi()}>
                             <span>
-                            ⋅ Проверяем гипотезы, после чего
-                            улучшаем и развиваем работающую
-                            систему.
+                                <span className={'work-method-list__dot'}></span>
+                                Проверяем гипотезы, после чего
+                                улучшаем и развиваем работающую
+                                систему.
                             </span>
                             <span className={'text-red' + (choice ? ' text-red--invisible' : '')}>
                                 КАК?? Хаааааааоооооооос!!!

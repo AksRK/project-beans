@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 ol, ul {
@@ -81,7 +82,7 @@ code {
   font-size: 17px;
   line-height: 20px;
   color: #828282;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 
   &::before {
@@ -90,16 +91,14 @@ code {
     bottom: -3%;
     width: 100%;
     border-bottom: 1px solid #828282;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   &:hover {
     color: #333333;
-    transition: 0.3s ease-in-out;
 
     &::before {
       border-color: #333333;
-      transition: 0.3s ease-in-out;
     }
   }
 
