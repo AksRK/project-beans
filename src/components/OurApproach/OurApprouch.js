@@ -149,7 +149,7 @@ function OurApprouch() {
     }
 
     return (
-        <section id={'#ourApprouch'} className={'our-approuch'}>
+        <section className={'our-approuch'}>
             <div className={'section-title'}>
                 <img src={ourImg} alt="Наш"/>
                 <span>подход</span>
