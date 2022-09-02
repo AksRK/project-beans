@@ -5,7 +5,7 @@ function List({list}) {
     useEffect(() => {
         const listDom = document.querySelector('.list')
         listDom.classList.add('opacity-animated')
-        const timeout = setTimeout(() => {
+        setTimeout(() => {
             listDom.classList.remove('opacity-animated')
         }, 1000)
     }, [list])

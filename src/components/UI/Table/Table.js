@@ -6,7 +6,7 @@ function Table({table}) {
     useEffect(() => {
         const tableDom = document.querySelector('.table')
         tableDom.classList.add('opacity-animated')
-        const timeout = setTimeout(() => {
+        setTimeout(() => {
             tableDom.classList.remove('opacity-animated')
         }, 1000)
 

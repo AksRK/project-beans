@@ -1,6 +1,7 @@
 import ourImg from "../../assets/images/handwritte/our.svg";
 import './HowWeWork.scss'
 import {useState} from "react";
+import PopUp from "../UI/PopUp/PopUp";
 
 function HowWeWork() {
     const [choice, setChoice] = useState(true)
@@ -42,7 +43,15 @@ function HowWeWork() {
                                 <span className={'work-method-list__dot'}></span>
                                 Знакомимся, <span className={!choice ? 'text-crossed-out-red': ''}>погружаемся в вашу
                                 задачу, определяем «главное» и
-                                составляем бэклог      для запуска,
+                                составляем бэклог
+                                <PopUp
+                                    mark={'2'}
+                                    text={'//р-Продукт — это не то, что просит клиент, а то, что нужно его бизнесу. Даже если он ещё ' +
+                                        'пока об этом не подозревает. Даже если он встретит продукт в штыки. Даже если он видит ' +
+                                        'всё совсем по-другому.'}
+                                    windowPosition={{left:'260px', bottom:'-170px'}}
+                                />
+                                для запуска,
                                 поделим проект на спринты.</span>
                             </span>
                             <span className={'text-red' + (choice ? ' text-red--invisible' : '')}>
@@ -58,7 +67,7 @@ function HowWeWork() {
                             </span>
                             <span>
                                 <span className={'work-method-list__dot'}></span>
-                                Определим минимальный бюджет
+                                {'Определим минимальный \n бюджет'}
                                 {
                                     !choice ? <span className={'text-red'}>?</span> : '.'
                                 }
@@ -72,6 +81,13 @@ function HowWeWork() {
                             <span>
                                 <span className={'work-method-list__dot'}></span>
                                 Превратим ваш проект в МВП.
+                                <PopUp
+                                    mark={'3'}
+                                    text={'//р-Продукт — это не то, что просит клиент, а то, что нужно его бизнесу. Даже если он ещё ' +
+                                        'пока об этом не подозревает. Даже если он встретит продукт в штыки. Даже если он видит ' +
+                                        'всё совсем по-другому.'}
+                                    windowPosition={{left:'140px', bottom:'-170px'}}
+                                />
                             </span>
                             <span className={'text-red' + (choice ? ' text-red--invisible' : '')}>
                                 Проект раздувается и становится неуправляемым

@@ -5,6 +5,8 @@ import OurApprouch from "../../components/OurApproach/OurApprouch";
 import Header from "../../components/Header/Header";
 import Banner from "../../components/Banner/Banner";
 import WhoIsThere from "../../components/WhoIsThere/WhoIsThere";
+import OurProjects from "../../components/OurProjects/OurProjects";
+import Footer from "../../components/Footer/Footer";
 
 function Tst () {
 
@@ -17,11 +19,12 @@ function Tst () {
                     <WhoIsThere/>
                     <HowWeWork/>
                     <OurApprouch/>
+                    <OurProjects/>
 
                     <div id={'id'}></div>
                 </section>
                 <section className={'page__item page__item--black'}>
-                    Заглушка...
+                    <Footer/>
                 </section>
                 <Navigation/>
             </div>

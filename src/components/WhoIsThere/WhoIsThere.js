@@ -30,7 +30,7 @@ function WhoIsThere() {
             <div className={'who-is-there__description'}>
                 <span>
                     Подберем команду под вашу задачу. Обычно это команда с такими
-                    <a className={'link who-is-there__description--link'} href="#id">компетенциями.</a>
+                    <a className={'link who-is-there__description--link'} href={"#id"}>компетенциями.</a>
                 </span>
                 <span>Можем начать, не имея всех материалов и ответов, импровизируем.</span>
                 <span>

@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import Table from "../UI/Table/Table";
 import List from "../UI/List/List";
 import TableGraphical from "../UI/TableGraphic/TableGraphical";
+import PopUp from "../UI/PopUp/PopUp";
 
 function OurApprouch() {
     const [radioId, setRadioId] = useState(0)
@@ -133,7 +134,7 @@ function OurApprouch() {
                 setDesignListCheckbox({...designListCheckbox, [designListCheckboxCurrent]:true})
             }, 2000)
         }
-    }, [designListCheckbox])
+    }, [designListCheckboxCurrent, startAnimationDesignList])
 
     function startBot(id) {
         if (!startAnimationDesignList) {
@@ -191,8 +192,8 @@ function OurApprouch() {
                                                 return (
                                                     <li onClick={() => {setRadioId(element.id)}}
                                                         key={element.id}
-                                                        className={'radio-menu__item' + (radioId === element.id ? ' radio-menu__item--active' : '')}
-                                                    >
+                                                        className={'radio-menu__item' + (radioId === element.id ?
+                                                                   ' radio-menu__item--active' : '')}>
                                                         <span>{element.value}</span>
                                                     </li>
                                                 )
@@ -252,9 +253,9 @@ function OurApprouch() {
                                                             {clickBotUsedCount <= 2 ?
                                                                 '￢(・_・;)':
                                                                 clickBotUsedCount <= 6 ?
-                                                                    '￢(-_-;)' :
+                                                                    "￢( '～` ;)" :
                                                                     clickBotUsedCount <= 9 ?
-                                                                        '￢(-__-`)': '￢(O_O)'}
+                                                                        '￢(・・ ;)ゞ': '￢( ˘ ､ ˘ )'}
                                                         </div> : ''
                                                 }
                                             </div>
@@ -280,9 +281,17 @@ function OurApprouch() {
                         Дизайн-процесс
                     </h4>
                     <div className={'method-info-box__text method-info-box__text--white'}>
-                        Составим план для запуска,
-                        поделим проект на спринты, предоставим личный кабинет
-                        с прозрачными расчетами работы и для наблюдения процесса.
+                        Наш подход основан на использовании дизайн-концепции,
+                        которая увеличит ценность продукта для клиента и сократит ваши издержки
+                        <PopUp
+                            mark={'4'}
+                            styleMark={'white'}
+                            text={'//р-Продукт — это не то, что просит клиент, а то, что нужно его бизнесу. Даже если он ещё ' +
+                                'пока об этом не подозревает. Даже если он встретит продукт в штыки. Даже если он видит ' +
+                                'всё совсем по-другому.'}
+                            windowPosition={{bottom:'-240px'}}
+                        />
+                        на запуск.
                     </div>
                     <div className={
                         'method-info-box__text ' +

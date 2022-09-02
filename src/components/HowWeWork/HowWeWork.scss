@@ -103,6 +103,7 @@
     border-radius: 11px;
     transition: all 1s ease-in-out;
     animation: 0.7s both closeEvenItem;
+    white-space: pre-line;
 
     & span {
       position: relative;

@@ -16,9 +16,10 @@
 
   &-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0 20px;
+    gap: 17px 17px;
 
     &__item {
       position: relative;
@@ -50,14 +51,14 @@
         content: '';
         position: absolute;
         top: 50%;
-        left: -10%;
+        right: -10%;
         width: 3px;
         height: 3px;
         border-radius: 2px;
         background: #B5B5B5;
       }
 
-      &:first-child {
+      &:last-child {
         &:after {
           display: none;
         }
