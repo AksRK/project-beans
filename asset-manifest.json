@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project-beans/static/css/main.5ed114eb.css",
-    "main.js": "/project-beans/static/js/main.61cdea57.js",
+    "main.css": "/project-beans/static/css/main.bdbee760.css",
+    "main.js": "/project-beans/static/js/main.5c7ecffc.js",
     "static/media/Inter-ExtraBoldItalic.woff": "/project-beans/static/media/Inter-ExtraBoldItalic.1257df69b7717d107e5a.woff",
     "static/media/Inter-BoldItalic.woff": "/project-beans/static/media/Inter-BoldItalic.ed4c83ffd396ac7de6a2.woff",
     "static/media/Inter-SemiBoldItalic.woff": "/project-beans/static/media/Inter-SemiBoldItalic.0d84e08a3943927bd626.woff",
@@ -40,17 +40,18 @@
     "static/media/Inter-Regular.woff2": "/project-beans/static/media/Inter-Regular.78b2018492a28d88b699.woff2",
     "static/media/Inter-Thin.woff2": "/project-beans/static/media/Inter-Thin.ba2a3a94e8c8e46ff09c.woff2",
     "static/media/InterV.woff2": "/project-beans/static/media/InterV.b980b9f857e002a3709c.woff2",
-    "static/media/managers.svg": "/project-beans/static/media/managers.7c53b3d49f014e9249c8da78fa4170b4.svg",
-    "static/media/designers.svg": "/project-beans/static/media/designers.2387ec3878ffcd2b5d816e161ea87469.svg",
-    "static/media/who.svg": "/project-beans/static/media/who.6709be47edb34007a9560d373ce77c0e.svg",
-    "static/media/our.svg": "/project-beans/static/media/our.0803cd9459d25b09df7dadb422271e5a.svg",
+    "static/media/managers.svg": "/project-beans/static/media/managers.c56e47ac38f9993fb45d50b1b45cb694.svg",
+    "static/media/designers.svg": "/project-beans/static/media/designers.1671d81d8699bcee410680c36327611b.svg",
+    "static/media/who.svg": "/project-beans/static/media/who.3e75142fd94ae15e6e279f2e403a9a0e.svg",
+    "static/media/our.svg": "/project-beans/static/media/our.7286d8ba960b1ed1a8f27795bdb0278d.svg",
+    "static/media/we.svg": "/project-beans/static/media/we.1326c5f6f542c2aaf6aad82294e22860.svg",
     "index.html": "/project-beans/index.html",
-    "static/media/and.svg": "/project-beans/static/media/and.3b2f95d0c7e534cf235877b47be0fb1b.svg",
-    "main.5ed114eb.css.map": "/project-beans/static/css/main.5ed114eb.css.map",
-    "main.61cdea57.js.map": "/project-beans/static/js/main.61cdea57.js.map"
+    "static/media/and.svg": "/project-beans/static/media/and.ac830d1d504153bec66fc64dc6676815.svg",
+    "main.bdbee760.css.map": "/project-beans/static/css/main.bdbee760.css.map",
+    "main.5c7ecffc.js.map": "/project-beans/static/js/main.5c7ecffc.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ed114eb.css",
-    "static/js/main.61cdea57.js"
+    "static/css/main.bdbee760.css",
+    "static/js/main.5c7ecffc.js"
   ]
 }
