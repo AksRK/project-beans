@@ -20,7 +20,9 @@ function Banner() {
                     text={'//р-Продукт — это не то, что просит клиент, а то, что нужно его бизнесу. Даже если он ещё ' +
                         'пока об этом не подозревает. Даже если он встретит продукт в штыки. Даже если он видит ' +
                         'всё совсем по-другому.'}
-                    windowPosition={{left: '60px', bottom:'-170px'}}
+                    // windowPosition={{left: '60px', bottom:'-170px'}}
+                    windowPosition={{left: '60px', bottom:'-165px'}}
+                    markPosition={{top:'-25px'}}
                 />
                 </span>
 

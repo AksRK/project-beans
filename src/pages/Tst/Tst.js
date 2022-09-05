@@ -8,6 +8,7 @@ import WhoIsThere from "../../components/WhoIsThere/WhoIsThere";
 import OurProjects from "../../components/OurProjects/OurProjects";
 import Footer from "../../components/Footer/Footer";
 
+
 function Tst () {
 
     return (
@@ -16,9 +17,13 @@ function Tst () {
                 <section className={'page__item'}>
                     <Header/>
                     <Banner/>
+                    <div id={'WhoIsThere'}></div>
                     <WhoIsThere/>
+                    <div id={'HowWeWork'}></div>
                     <HowWeWork/>
+                    <div id={'OurApprouch'}></div>
                     <OurApprouch/>
+                    <div id={'OurProjects'}></div>
                     <OurProjects/>
 
                     <div id={'id'}></div>

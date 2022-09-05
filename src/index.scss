@@ -75,6 +75,10 @@ code {
     background: #E8E8E8;
     border-radius: 30px;
   }
+
+  &--no-scroll {
+    overflow: hidden;
+  }
 }
 
 .link {
@@ -201,5 +205,31 @@ code {
 
   100% {
     opacity: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .container {
+    width: 100%;
+  }
+
+  .page {
+    &__item {
+      padding: 19px 16px;
+    }
+
+    &-title {
+      font-size: 35px;
+      line-height: 42px;
+
+      & img {
+        max-width: 189px;
+        margin: 0 10px;
+
+        &:first-child {
+          margin: 0 20px;
+        }
+      }
+    }
   }
 }

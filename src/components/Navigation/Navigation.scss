@@ -1,4 +1,5 @@
 .nav {
+  width: 393px;
   position: sticky;
   bottom: 30px;
   padding: 3px;
@@ -13,7 +14,7 @@
 
   &__item {
     display: block;
-    padding: 13px 15px;
+    padding: 13px 10px;
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;

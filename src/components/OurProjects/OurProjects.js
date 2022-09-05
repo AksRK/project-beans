@@ -36,7 +36,7 @@ function OurProjects() {
                 {
                     demoProjectList.map((item) => {
                         return (
-                            <li className={'demo-projects-list__item'}>
+                            <li key={demoProjectList.indexOf(item)} className={'demo-projects-list__item'}>
                                 <div className={'demo-projects-list__tag'}>
                                     {item.tag}
                                 </div>

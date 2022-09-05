@@ -15,6 +15,7 @@ function OurApprouch() {
     const [startAnimationDesignList, setStartAnimationDesignList] = useState(false)
     const [clickBotUsedCount, setClickBotUsedCount] = useState(0)
     const [designProcessListItemId, setDesignProcessListItemId] = useState(1)
+    const mobVersion = 479
 
 
     let radioMenuValue = [
@@ -134,7 +135,7 @@ function OurApprouch() {
                 setDesignListCheckbox({...designListCheckbox, [designListCheckboxCurrent]:true})
             }, 2000)
         }
-    }, [designListCheckboxCurrent, startAnimationDesignList])
+    }, [designListCheckboxCurrent])
 
     function startBot(id) {
         if (!startAnimationDesignList) {
@@ -167,7 +168,12 @@ function OurApprouch() {
                         поделим проект на спринты, предоставим личный кабинет
                         с прозрачными расчетами работы и для наблюдения процесса.
                     </div>
-                    <div className={'method-info-box__text method-info-box__text--abslt-bottom'}>01</div>
+                    {
+                        window.screen.width <= mobVersion ?
+                            ''
+                            :<div className={'method-info-box__text method-info-box__text--abslt-bottom'}>01</div>
+                    }
+
                 </div>
                 <div className={'method-info-box__item'}>
                     <div className={'method-info-box__text method-info-box__text--small'}>
@@ -232,7 +238,11 @@ function OurApprouch() {
                         Распутаем сложные функции и пользовательские сценарии,
                         а после уложим все в понятный интерфейс
                     </div>
-                    <div className={'method-info-box__text method-info-box__text--abslt-bottom'}>02</div>
+                    {
+                        window.screen.width <= mobVersion ?
+                            ''
+                            : <div className={'method-info-box__text method-info-box__text--abslt-bottom'}>02</div>
+                    }
                 </div>
 
                 <div className={'method-info-box__item  method-info-box__item--padding-top-20px'}>
@@ -290,15 +300,20 @@ function OurApprouch() {
                                 'пока об этом не подозревает. Даже если он встретит продукт в штыки. Даже если он видит ' +
                                 'всё совсем по-другому.'}
                             windowPosition={{bottom:'-240px'}}
+                            markPosition={{top:'-10px'}}
                         />
                         на запуск.
                     </div>
-                    <div className={
-                        'method-info-box__text ' +
-                        'method-info-box__text--abslt-bottom ' +
-                        'method-info-box__text--white'}>
-                        03
-                    </div>
+                    {
+                        window.screen.width <= mobVersion ?
+                            ''
+                            : <div className={
+                                'method-info-box__text ' +
+                                'method-info-box__text--abslt-bottom ' +
+                                'method-info-box__text--white'}>
+                                03
+                            </div>
+                    }
                 </div>
                 <div className={'method-info-box__item  method-info-box__item--padding-top-20px'}>
                     <div className={'tabs-panel tabs-panel--lght-silver tabs-panel--padding-8px'}>

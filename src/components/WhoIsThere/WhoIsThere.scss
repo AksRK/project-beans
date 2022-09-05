@@ -41,7 +41,6 @@
 
     &--link {
       font-size: 22px;
-      //line-height: 150.8%;
     }
   }
 }
@@ -64,5 +63,28 @@
 
   &__expert-name {
     color: #ffffff;
+  }
+}
+
+@media (max-width: 479px) {
+  .who-is-there {
+
+    &__img-box {
+      gap: 6px 6px;
+    }
+
+    &__description {
+      font-size: 17px;
+      gap: 20px 0;
+
+      & a {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .worker-card {
+    font-size: 17px;
+    max-height: 253px;
   }
 }

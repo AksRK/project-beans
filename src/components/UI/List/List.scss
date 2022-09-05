@@ -24,3 +24,13 @@
     }
   }
 }
+
+@media (max-width: 479px) {
+  .list {
+    gap: 3px;
+
+    &__item {
+      font-size: 14px;
+    }
+  }
+}

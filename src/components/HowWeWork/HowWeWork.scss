@@ -91,6 +91,7 @@
   gap: 3px 0;
 
   &__item {
+    position: relative;
     width: 100%;
     max-height: content-box;
     display: flex;
@@ -117,16 +118,13 @@
       }
     }
 
-    &:nth-child(even) {
-      flex-direction: column;
-    }
-
     &--others {
       max-height: max-content;
 
       &:nth-child(even) {
         position: relative;
-        transform: translateY(-15px);
+        //transform: translateY(-15px);
+        top: -5%;
         background: rgba(255, 255, 255, 0.8);
         animation: 0.7s both openEvenItem;
 
@@ -203,18 +201,17 @@
 
   0% {
     width: 100%;
-    transform: translateY(0);
+    top: 0;
   }
 
   50% {
     width: 90%;
-    transform: translateY(0);
   }
 
 
   100% {
     width: 90%;
-    transform: translateY(-15px);
+    top: -2.5%;
   }
 }
 
@@ -222,16 +219,38 @@
 
   0% {
     width: 90%;
-    transform: translateY(-15px);
+    top: -2.5%;
   }
 
   50% {
     width: 90%;
-    transform: translateY(0);
   }
 
   100% {
     width: 100%;
-    transform: translateY(0);
+    top: 0;
   }
+}
+@media (max-width: 479px) {
+  .how-we-work {
+  }
+
+  .work-method-list {
+    width: 100%;
+
+    &__item {
+      font-size: 17px;
+      padding: 21px 19px;
+    }
+  }
+
+  .how-we-work-content {
+    gap: 35px 0;
+
+    &__item {
+      flex-direction: inherit;
+      gap: 0 45px;
+    }
+  }
+
 }

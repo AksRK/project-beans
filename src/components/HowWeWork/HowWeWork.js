@@ -50,6 +50,7 @@ function HowWeWork() {
                                         'пока об этом не подозревает. Даже если он встретит продукт в штыки. Даже если он видит ' +
                                         'всё совсем по-другому.'}
                                     windowPosition={{left:'260px', bottom:'-170px'}}
+                                    markPosition={{top:'-10px'}}
                                 />
                                 для запуска,
                                 поделим проект на спринты.</span>
@@ -87,6 +88,7 @@ function HowWeWork() {
                                         'пока об этом не подозревает. Даже если он встретит продукт в штыки. Даже если он видит ' +
                                         'всё совсем по-другому.'}
                                     windowPosition={{left:'140px', bottom:'-170px'}}
+                                    markPosition={{top:'-10px'}}
                                 />
                             </span>
                             <span className={'text-red' + (choice ? ' text-red--invisible' : '')}>
