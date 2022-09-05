@@ -140,6 +140,8 @@
 }
 
 .radio-menu {
+  width: 305px;
+  margin: 0 auto;
   position: relative;
   top: 0;
   display: flex;
@@ -186,7 +188,8 @@
   &__plate {
     position: absolute;
     left: 3px;
-    width: 103px;
+    //width: 103px;
+    width: 96px;
     height: 45px;
     background: #FFFFFF;
     box-shadow: -6px -6px 4px rgba(255, 255, 255, 0.16), 6px 6px 11px rgba(51, 51, 51, 0.08);
@@ -316,7 +319,6 @@
 
 .design-process-list {
   width: 100%;
-  //height: 100%;
   display: flex;
   flex-direction: column;
   gap: 4px 0;
@@ -403,14 +405,12 @@
   }
 
   to {
-    //max-height: 100%;
     max-height: 400px;
   }
 }
 
 @keyframes design-list-item-animation-close {
   from {
-    //max-height: 100%;
     max-height: 400px;
   }
 
@@ -421,7 +421,7 @@
 
 @media (max-width: 479px) {
   .method-info-box {
-    height: 767px;
+    min-height: 767px;
     padding: 13px 13px 0 13px;
     gap: 40px 0;
 

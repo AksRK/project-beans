@@ -9,7 +9,8 @@ import PopUp from "../UI/PopUp/PopUp";
 function OurApprouch() {
     const [radioId, setRadioId] = useState(0)
     const [sprint, setSprint] = useState(true)
-    const radioMarginLeft = 111
+    // const radioMarginLeft = 111
+    const radioMarginLeft = 104
     const [designListCheckbox, setDesignListCheckbox] = useState({1: true, 2:true, 3:true})
     const [designListCheckboxCurrent, setDesignListCheckboxCurrent] = useState(0)
     const [startAnimationDesignList, setStartAnimationDesignList] = useState(false)
@@ -89,9 +90,11 @@ function OurApprouch() {
 
     function styleRadioLine() {
         if (radioId === 0) {
-            return {left: '216.5px'}
+            // return {left: '216.5px'}
+            return {left: '203px'}
         }else if (radioId === radioMenuValue.indexOf(radioMenuValue.at(-1))) {
-            return {left: '108.5px'}
+            // return {left: '108.5px'}
+            return {left: '102px'}
         }else {
             return {opacity: '0'}
         }

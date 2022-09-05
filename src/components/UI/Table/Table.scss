@@ -44,11 +44,19 @@
 @media (max-width: 479px) {
   .table {
 
+    &__row {
+      margin-bottom: 5px;
+    }
+
     &__td {
       font-size: 14px;
 
       &--bold {
         font-size: 17px;
+      }
+
+      &--main {
+        flex: 0 0 45%;
       }
     }
   }
