@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project-beans/static/css/main.6b55c010.css",
-    "main.js": "/project-beans/static/js/main.34da3568.js",
+    "main.css": "/project-beans/static/css/main.79e53d1b.css",
+    "main.js": "/project-beans/static/js/main.9b703203.js",
     "static/media/Inter-ExtraBoldItalic.woff": "/project-beans/static/media/Inter-ExtraBoldItalic.1257df69b7717d107e5a.woff",
     "static/media/Inter-BoldItalic.woff": "/project-beans/static/media/Inter-BoldItalic.ed4c83ffd396ac7de6a2.woff",
     "static/media/Inter-SemiBoldItalic.woff": "/project-beans/static/media/Inter-SemiBoldItalic.0d84e08a3943927bd626.woff",
@@ -47,11 +47,11 @@
     "static/media/we.svg": "/project-beans/static/media/we.1326c5f6f542c2aaf6aad82294e22860.svg",
     "index.html": "/project-beans/index.html",
     "static/media/and.svg": "/project-beans/static/media/and.ac830d1d504153bec66fc64dc6676815.svg",
-    "main.6b55c010.css.map": "/project-beans/static/css/main.6b55c010.css.map",
-    "main.34da3568.js.map": "/project-beans/static/js/main.34da3568.js.map"
+    "main.79e53d1b.css.map": "/project-beans/static/css/main.79e53d1b.css.map",
+    "main.9b703203.js.map": "/project-beans/static/js/main.9b703203.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b55c010.css",
-    "static/js/main.34da3568.js"
+    "static/css/main.79e53d1b.css",
+    "static/js/main.9b703203.js"
   ]
 }
