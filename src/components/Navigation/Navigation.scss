@@ -1,9 +1,6 @@
 .nav {
   width: 393px;
-  position: sticky;
-  bottom: 30px;
   padding: 3px;
-  margin: 0 auto;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +18,7 @@
     color: #333333;
     border-radius: 10px;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 
     &:hover {
       background: #b3b3b3;
@@ -53,5 +51,34 @@
     height: 30px;
     background: #b3b3b3;
     margin: 0 5px;
+  }
+}
+
+.wrp-nav {
+  width: 100%;
+  max-width: 1234px;
+  position: fixed;
+  bottom:0;
+  left:50%;
+  transform:translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  z-index: 11;
+}
+
+@media (max-width: 479px) {
+  .wrp-nav {
+    z-index: 9;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    width: 375px;
+
+    &__item {
+      font-size: 15px;
+      line-height: 15px;
+    }
   }
 }

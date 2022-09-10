@@ -7,10 +7,17 @@
   line-height: 150.8%;
   color: #FFFFFF;
   padding-top: 35px;
+  margin-bottom: 100px;
 
   &__item {
     display: flex;
     flex-direction: column;
     gap: 12px 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .footer {
+    margin-bottom: 200px;
   }
 }

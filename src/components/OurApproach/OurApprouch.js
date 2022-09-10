@@ -1,6 +1,6 @@
 import ourImg from '../../assets/images/handwritte/our.svg'
 import './OurApprouch.scss'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import Table from "../UI/Table/Table";
 import List from "../UI/List/List";
 import TableGraphical from "../UI/TableGraphic/TableGraphical";
@@ -9,8 +9,6 @@ import PopUp from "../UI/PopUp/PopUp";
 function OurApprouch() {
     const [radioId, setRadioId] = useState(0)
     const [sprint, setSprint] = useState(true)
-    // const radioMarginLeft = 111
-    const radioMarginLeft = 104
     const [designListCheckbox, setDesignListCheckbox] = useState({1: true, 2:true, 3:true})
     const [designListCheckboxCurrent, setDesignListCheckboxCurrent] = useState(0)
     const [startAnimationDesignList, setStartAnimationDesignList] = useState(false)
@@ -78,23 +76,38 @@ function OurApprouch() {
     ]
 
     function styleRadioPlate() {
-        const margin = radioId * radioMarginLeft
         if (radioId === 0) {
-            return '3px'
+            return {left:'3px'}
         }else if (radioId === 1) {
-            return radioMarginLeft + 'px'
+            if (window.screen.width <= 420) {
+                return {left: '98px'}
+            }else {
+                return {left: '112px'}
+            }
         }else {
-            return margin - 3 + 'px'
+            if (window.screen.width <= 420) {
+                return {left: '193px'}
+            }else {
+                return {left: '221px'}
+            }
         }
     }
 
     function styleRadioLine() {
         if (radioId === 0) {
-            // return {left: '216.5px'}
-            return {left: '203px'}
+            if (window.screen.width <= 420) {
+                return {left: '190px'}
+            }else {
+                return {left: '219px'}
+            }
+
         }else if (radioId === radioMenuValue.indexOf(radioMenuValue.at(-1))) {
-            // return {left: '108.5px'}
-            return {left: '102px'}
+            if (window.screen.width <= 420) {
+                return {left: '95px'}
+            }else {
+                return {left: '110px'}
+            }
+
         }else {
             return {opacity: '0'}
         }
@@ -131,15 +144,6 @@ function OurApprouch() {
             value: 'После теста МВП — первой работающей версии — расширяем функциональность продукта.'},
     ]
 
-    useEffect(() => {
-        if (startAnimationDesignList) {
-            setTimeout(() => {
-                setStartAnimationDesignList(false)
-                setDesignListCheckbox({...designListCheckbox, [designListCheckboxCurrent]:true})
-            }, 2000)
-        }
-    }, [designListCheckboxCurrent])
-
     function startBot(id) {
         if (!startAnimationDesignList) {
             setDesignListCheckbox({...designListCheckbox, [id]:false})
@@ -151,6 +155,10 @@ function OurApprouch() {
                 setClickBotUsedCount(0)
             }
         }
+        setTimeout(() => {
+            setStartAnimationDesignList(false)
+            setDesignListCheckbox({...designListCheckbox, [designListCheckboxCurrent]:true})
+        }, 2000)
     }
 
     return (
@@ -167,9 +175,11 @@ function OurApprouch() {
                         Планирование
                     </h4>
                     <div className={'method-info-box__text'}>
-                        Составим план для запуска,
-                        поделим проект на спринты, предоставим личный кабинет
-                        с прозрачными расчетами работы и для наблюдения процесса.
+                        Составим план для запуска, выделим команду,
+                        поделим проект на спринты, предоставим доступ
+                        к личному кабинету — прозрачная проектная витрина,
+                        на которой вам видно все: расчеты, процесс работы,
+                        результаты.
                     </div>
                     {
                         window.screen.width <= mobVersion ?
@@ -194,7 +204,7 @@ function OurApprouch() {
                                 <>
                                     <ul className={'radio-menu'}>
                                         <div className={'radio-menu__line'} style={styleRadioLine()}></div>
-                                        <div className={'radio-menu__plate'} style={{left: styleRadioPlate()}}></div>
+                                        <div className={'radio-menu__plate'} style={styleRadioPlate()}></div>
                                         {
                                             radioMenuValue.map((element) => {
 
@@ -238,8 +248,8 @@ function OurApprouch() {
                         Проектирование
                     </h4>
                     <div className={'method-info-box__text'}>
-                        Распутаем сложные функции и пользовательские сценарии,
-                        а после уложим все в понятный интерфейс
+                        Распутаем «сложное», определим и свяжем пользовательские сценарии,
+                        а потом уложим все в понятный и удобный интерфейс.
                     </div>
                     {
                         window.screen.width <= mobVersion ?
@@ -256,10 +266,10 @@ function OurApprouch() {
                                 designList.map((item) => {
                                     return (
                                         <li key={item.id} className={'design-list__item'}>
-                                            <div onClick={()=> startBot(item.id)}
-                                                 className={'design-list__checkbox' + (designListCheckbox[item.id] ?
-                                                     ' design-list__checkbox--checked' :
-                                                     ' design-list__checkbox--unchecked' ) }>
+                                            <div onClick={!startAnimationDesignList ? ()=> startBot(item.id) : ()=> '' }
+                                                 className={'checkbox' + (designListCheckbox[item.id] ?
+                                                     ' checkbox--checked' :
+                                                     ' checkbox--unchecked-red' ) }>
                                                 {
                                                     startAnimationDesignList && designListCheckboxCurrent === item.id ?
                                                         <div className={'design-list__click-bot'}>

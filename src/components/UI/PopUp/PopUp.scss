@@ -1,9 +1,7 @@
 .pop-up {
   min-width: 25px;
-  //min-height: 30px;
   display: inline-block;
   position: relative;
-  //z-index: 10;
   margin: 0 4px;
 
   &__mark {
@@ -33,6 +31,7 @@
       background: #175cf5;
       border-color: #175cf5;
       cursor: default;
+      margin-right: 6px;
     }
 
     &--pos-absolute {
@@ -67,13 +66,13 @@
     font-size: 17px;
     line-height: 150.8%;
     color: #333333;
-    animation: 1s both pop-up-open;
+    animation: 0.5s both pop-up-open;
   }
 
   &__close {
     position: absolute;
     right: 0;
-    top: -30%;
+    top: -65px;
     width: 50px;
     height: 50px;
     background: #FFFFFF;
@@ -119,7 +118,8 @@
     height: 100vh;
     z-index: 10;
     background: rgba(0, 0, 0, 0.8);
-    animation: 1s both background-pop-up-anim;
+    animation: 0.5s both background-pop-up-anim;
+    backdrop-filter: blur(2px);
   }
 }
 
@@ -166,7 +166,8 @@
     &__close {
       box-shadow: none;
       right: 18px;
-      top: -33%;
+      //top: -33%;
+      top: -70px;
     }
   }
 }
