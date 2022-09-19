@@ -1,5 +1,5 @@
 import './ModalWindow.scss'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function ModalWindow({view}) {
     const [paymentTerm, setPaymentTerm] = useState(false)
@@ -8,25 +8,25 @@ function ModalWindow({view}) {
     const [customerName, setCustomerName] = useState('')
     const [customerPhoneNumber, setCustomerPhoneNumber] = useState('')
     const [planningScheduleLater, setPlanningScheduleLater] = useState(false)
+    const [popUpPlanningScheduleView, setPopUpPlanningScheduleView] = useState(false)
     const [selectTimeMenu, setSelectTimeMenu] = useState(false)
+    const [discussionDay, setDiscussionDay] = useState('Не выбрано')
+    const [selectedTime, setSelectedTime] = useState('14:00')
+    const mobileVersion = 479
 
 
     if (view === true) {
         const backdrop = document.querySelector('.modal-window-backdrop')
         const modal = document.querySelector('.modal-window')
-        const page = document.querySelector('.page')
 
         backdrop.classList.add('modal-window-backdrop--visible')
         modal.classList.add('modal-window--visible')
-        page.classList.add('page--no-scroll')
     }
 
     function closeModal() {
         const backdrop = document.querySelector('.modal-window-backdrop')
         const modal = document.querySelector('.modal-window')
-        const page = document.querySelector('.page')
 
-        page.classList.remove('page--no-scroll')
         backdrop.classList.remove('modal-window-backdrop--visible')
         modal.classList.remove('modal-window--visible')
     }
@@ -65,8 +65,14 @@ function ModalWindow({view}) {
     ]
     const [priceItemSelected, setPriceItemSelected] = useState(priceList[0])
 
-    const handleClickPaymentVariant = (id) => {
+    function handleClickPaymentVariant (id) {
         setPriceItemSelected(id)
+        setPaymentTerm(false)
+    }
+
+    function choicePaymentTermLater() {
+        setPaymentTerm(!paymentTerm)
+        setPriceItemSelected(0)
     }
 
     const selectDaysList = [
@@ -77,9 +83,7 @@ function ModalWindow({view}) {
         {id:5, title: 'Пт'},
     ]
 
-    const [discussionDay, setDiscussionDay] = useState('Не выбрано')
 
-    const [selectedTime, setSelectedTime] = useState('14:00')
 
     const timeList = [
         '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'
@@ -109,7 +113,31 @@ function ModalWindow({view}) {
         )
     }
 
-    const [popUpPlanningScheduleView, setPopUpPlanningScheduleView] = useState(false)
+
+
+    function closeTimeMenu(event) {
+        const popUpWindow = document.querySelector('.planning-schedule__body')
+        if (event.target === popUpWindow) {
+            setSelectTimeMenu(false)
+        }
+
+    }
+
+    function choiceDay(day) {
+        setPlanningScheduleLater(false)
+        setDiscussionDay(day)
+    }
+
+    function choiceTime(time) {
+        setPlanningScheduleLater(false)
+        setSelectedTime(time)
+    }
+
+    function popUpPlanningScheduleChoiceLater() {
+        setPlanningScheduleLater(!planningScheduleLater)
+        setDiscussionDay(0)
+        setSelectedTime('Время')
+    }
 
     function popUpPlanningSchedule() {
 
@@ -119,7 +147,7 @@ function ModalWindow({view}) {
                      className={'planning-schedule-backdrop' +
                          (popUpPlanningScheduleView ?
                              ' planning-schedule-backdrop--visible':'')}></div>
-                <div className={'planning-schedule' +
+                <div onClick={(event)=> closeTimeMenu(event)} className={'planning-schedule' +
                         (popUpPlanningScheduleView ?
                             ' planning-schedule--visible':'')}>
                     <button onClick={()=> setPopUpPlanningScheduleView(false)}
@@ -157,7 +185,7 @@ function ModalWindow({view}) {
                                                             ' checkbox--checked':
                                                             ' checkbox--unchecked-black'
                                                     )}
-                                                    onClick={()=> setDiscussionDay(day)}
+                                                    onClick={()=> choiceDay(day)}
                                                 ></div>
                                             </div>
                                         )
@@ -175,7 +203,7 @@ function ModalWindow({view}) {
                                     timeList.map((time)=> {
                                         return (
                                             <span key={timeList.indexOf(time)}
-                                                  onClick={()=> setSelectedTime(time)}>
+                                                  onClick={()=> choiceTime(time)}>
                                                 {time}
                                             </span>
                                         )
@@ -188,7 +216,9 @@ function ModalWindow({view}) {
                                 Если хотите обсудить этот вопрос позже:
                             </label>
                             <div className={'checkbox-btn' + (planningScheduleLater ? ' checkbox-btn--checked':'')}
-                                 onClick={()=> setPlanningScheduleLater(!planningScheduleLater)}>
+                                 // onClick={()=> setPlanningScheduleLater(!planningScheduleLater)}
+                                onClick={()=> popUpPlanningScheduleChoiceLater()}
+                            >
                                     <span className={'checkbox-btn__mark' +
                                         (planningScheduleLater ? ' checkbox-btn__mark--checked':'')}>
                                     </span>
@@ -240,7 +270,7 @@ function ModalWindow({view}) {
                                       name={'your-success'}
                                       placeholder={'Обозначьте в цифрах, фактах или ощущениях, что будет \n' +
                                           'являться успехом после запуска проекта'}
-                                      style={{height:'81px'}}
+                                      style={window.screen.width <= mobileVersion ? {height:'110px'}:{height:'81px'}}
                                       onChange={event => setYourSuccess(event.target.value)}
                             />
                         </div>
@@ -273,7 +303,10 @@ function ModalWindow({view}) {
                                     priceList.map((item) => {
                                         return (
                                             <li key={item.id} className={'radio-menu-payment__item' +
-                                                (priceItemSelected.id === item.id ? ' radio-menu-payment__item--selected':'')}>
+                                                (priceItemSelected.id === item.id ? ' radio-menu-payment__item--selected':'')}
+                                                onClick={window.screen.width <= mobileVersion ?
+                                                    ()=> handleClickPaymentVariant(item):null}
+                                            >
                                                 <div className={'radio-menu-payment__choice'}>
                                                     <div className={'checkbox' +
                                                         (priceItemSelected.id === item.id ?
@@ -306,7 +339,9 @@ function ModalWindow({view}) {
                                     Обсудить условия оплаты позже:
                                 </label>
                                 <div className={'checkbox-btn' + (paymentTerm ? ' checkbox-btn--checked':'')}
-                                     onClick={()=> setPaymentTerm(!paymentTerm)}>
+                                     // onClick={()=> setPaymentTerm(!paymentTerm)}
+                                    onClick={()=> choicePaymentTermLater()}
+                                >
                                     <span className={'checkbox-btn__mark' +
                                         (paymentTerm ? ' checkbox-btn__mark--checked':'')}>
                                     </span>

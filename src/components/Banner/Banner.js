@@ -1,7 +1,8 @@
 import './Banner.scss'
-import designersImg from "../../assets/images/handwritte/designers.svg";
-import andImg from "../../assets/images/handwritte/and.svg";
-import managersImg from "../../assets/images/handwritte/managers.svg";
+import designersImg from "../../assets/images/handwritte/ru/designers.svg";
+import andImg from "../../assets/images/handwritte/ru/and.svg";
+import managersImg from "../../assets/images/handwritte/ru/managers.svg";
+import andManagersImg from '../../assets/images/handwritte/ru/and-managers.svg'
 import PopUp from "../UI/PopUp/PopUp";
 
 function Banner() {
@@ -11,9 +12,10 @@ function Banner() {
             <h2 className={'page-title'}>
                 Команда
                 <img src={designersImg} alt={'Дизайнеров'}/>
-                <img src={andImg} alt={'И'}/>
-                <img src={managersImg} alt={'Менеджеров'}/>
-                <span>для</span>
+                {/*<img src={andImg} alt={'И'}/>*/}
+                {/*<img src={managersImg} alt={'Менеджеров'}/>*/}
+                <img src={andManagersImg} alt={'И менеджеров'}/>
+                <span style={{marginRight:'20px'}}>для</span>
                 <span>запуска вашего продукта
                 <PopUp
                     mark={'1'}
@@ -25,7 +27,7 @@ function Banner() {
                 </span>
 
             </h2>
-            <span className={'banner__description'}>
+            <span className={'page-description'}>
                         Сегодня люди требуют от продуктов большего, чем когда-либо прежде. Они ожидают, что бренд будет
                         не только соответствовать их ожиданиям, но и выходить за рамки. Недостаточно делать только
                         отличный дизайн.

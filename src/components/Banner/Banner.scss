@@ -5,20 +5,4 @@
   flex-wrap: wrap;
   gap: 23px 0;
   margin-top: 101px;
-
-  &__description {
-    max-width: 787px;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 150.8%;
-    color: #828282;
-  }
-}
-
-@media (max-width: 479px) {
-  .banner {
-    &__description {
-      font-size: 20px;
-    }
-  }
 }

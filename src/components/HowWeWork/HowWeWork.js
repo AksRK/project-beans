@@ -1,4 +1,4 @@
-import ourImg from "../../assets/images/handwritte/our.svg";
+import ourImg from "../../assets/images/handwritte/ru/our.svg";
 import './HowWeWork.scss'
 import {useState} from "react";
 import PopUp from "../UI/PopUp/PopUp";
@@ -23,17 +23,19 @@ function HowWeWork() {
 
     return (
         <section className={'how-we-work'}>
-            <h4 className={'section-title'}>как работаем ⋅</h4>
+            <h4 className={'section-title'}>
+                <img src={ourImg} alt={'Наш'}/>
+                метод ⋅
+            </h4>
 
             <div className={'how-we-work-content'}>
                 <div className={'how-we-work-content__item'}>
-                    <button onClick={ourMethod} className={choice ? 'how-we-work-content__btn': 'how-we-work-content__btn how-we-work-content__btn--active' }>
-                        <img src={ourImg} alt={'Наш'}/>
-                        метод
+                    <button onClick={ourMethod} className={'how-we-work-content__btn' + (choice ? ' how-we-work-content__btn--active':'') }>
+                        как мы работаем
                     </button>
                     <button onClick={others}
-                            className={choice ? 'how-we-work-content__btn how-we-work-content__btn--secondary' : 'how-we-work-content__btn how-we-work-content__btn--secondary-active'}>
-                        у других
+                            className={'how-we-work-content__btn how-we-work-content__btn--secondary' + (!choice ?' how-we-work-content__btn--secondary-active':'')}>
+                        другие
                     </button>
                 </div>
                 <div className={'how-we-work-content__item'}>
@@ -46,7 +48,7 @@ function HowWeWork() {
                                 составляем бэклог
                                 <PopUp
                                     mark={'2'}
-                                    text={'Бэклог — это список задач со степенями' +
+                                    text={'Бэклог — это список задач со степенями ' +
                                         'приоритетности, необходимые для запуска ' +
                                         'продукта.'}
                                     windowPosition={{left:'260px', bottom:'-100px'}}

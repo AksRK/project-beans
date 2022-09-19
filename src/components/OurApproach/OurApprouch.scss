@@ -382,6 +382,7 @@
     min-height: 767px;
     padding: 13px 13px 0 13px;
     gap: 40px 0;
+    overflow: hidden;
 
     &__item {
       flex: 0 0 100%;
@@ -403,6 +404,7 @@
   .tabs-panel {
     width: 100%;
     padding: 15px 15px 0 15px;
+    min-height: 400px;
 
     &__text {
       font-size: 14px;

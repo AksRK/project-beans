@@ -1,4 +1,4 @@
-import ourImg from '../../assets/images/handwritte/our.svg'
+import ourImg from '../../assets/images/handwritte/ru/our.svg'
 import './OurApprouch.scss'
 import {useState} from "react";
 import Table from "../UI/Table/Table";
@@ -192,10 +192,10 @@ function OurApprouch() {
                     <div className={'method-info-box__text method-info-box__text--small'}>
                         <span>Пример </span>
                         <span onClick={() => setSprint(true)}
-                              className={sprint ? '' : 'link link--blue-dtd'}>спринтов </span>
+                              className={sprint ? '' : 'link link--blue-dtd'}> <span>спринтов</span> </span>
                         <span>и </span>
                         <span onClick={() => setSprint(false)}
-                              className={!sprint ? '' : 'link link--blue-dtd'}>ганта</span>
+                              className={!sprint ? '' : 'link link--blue-dtd'}><span>ганта</span></span>
                     </div>
 
                     <div className={'tabs-panel'}>
@@ -309,10 +309,8 @@ function OurApprouch() {
                         <PopUp
                             mark={'4'}
                             styleMark={'white'}
-                            text={'//р-Продукт — это не то, что просит клиент, а то, что нужно его бизнесу. Даже если он ещё ' +
-                                'пока об этом не подозревает. Даже если он встретит продукт в штыки. Даже если он видит ' +
-                                'всё совсем по-другому.'}
-                            windowPosition={{bottom:'-240px'}}
+                            text={'Издержки — денежные затраты на запуск вашего продукта.'}
+                            windowPosition={{bottom:'-140px', left:'-15px'}}
                             markPosition={{top:'-10px'}}
                         />
                         на запуск.

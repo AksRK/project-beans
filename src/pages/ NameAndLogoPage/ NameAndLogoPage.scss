@@ -1,0 +1,166 @@
+.name-and-logo {
+  margin-top: 101px;
+
+  &__sub-title {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150.8%;
+    color: #828282;
+  }
+
+  &__banner-img-wrp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 65px 0;
+
+    & img {
+      max-width: 812px;
+    }
+  }
+}
+
+.smet-lab-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px 0;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 150.8%;
+    color: #000000;
+  }
+}
+
+.demo-logo-box {
+  width: 719px;
+  height: 365px;
+  background: #4180DF;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    max-width: 620px;
+    display: flex;
+    align-items: center;
+    gap: 0 18px;
+  }
+
+  &__logo-text {
+    max-width: 400px;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 69px;
+    color: #FFFFFF;
+  }
+}
+
+.logo-in-the-trash {
+  margin-top: 106px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px 0;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 100px 0;
+
+    &--trash-box {
+      background: #828282;
+      border-radius: 23px;
+      padding: 41px 64px;
+    }
+  }
+}
+
+.canceled-logo-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 70px 70px;
+
+  &__item {
+    width: fit-content;
+    position: relative;
+    padding: 0 35px;
+  }
+
+  &__mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150.8%;
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 479px) {
+  .name-and-logo {
+    &__sub-title {
+      font-size: 20px;
+    }
+
+    &__banner-img-wrp {
+      margin: 20px 0;
+      & img {
+        width: 100%;
+      }
+    }
+  }
+
+  .smet-lab-demo {
+    &__title {
+      font-size: 25px;
+    }
+  }
+
+  .demo-logo-box {
+    width: 100%;
+    height: 222px;
+
+    &__item {
+      max-width: 330px;
+
+      & img {
+        width: 108px;
+      }
+    }
+
+    &__logo-text {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  .logo-in-the-trash {
+
+    &__item {
+      gap: 40px 0;
+
+      &--trash-box {
+        padding: 20px;
+      }
+    }
+  }
+
+  .canceled-logo-list {
+    justify-content: center;
+    gap: 40px 10px;
+
+    &__item {
+      transform: scale(80%);
+    }
+  }
+}

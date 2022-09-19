@@ -1,5 +1,5 @@
 import './WhoIsThere.scss'
-import whoImg from "../../assets/images/handwritte/who.svg";
+import whoImg from "../../assets/images/handwritte/ru/who.svg";
 
 function WhoIsThere() {
 
@@ -30,7 +30,9 @@ function WhoIsThere() {
             <div className={'who-is-there__description'}>
                 <span>
                     Подберем команду под вашу задачу. Обычно это команда с такими
-                    <a className={'link who-is-there__description--link'} href={"#id"}>компетенциями.</a>
+                    <a className={'link who-is-there__description--link'} href={"#id"}>
+                        <span>компетенциями.</span>
+                    </a>
                 </span>
                 <span>Можем начать, не имея всех материалов и ответов, импровизируем.</span>
                 <span>

@@ -6,7 +6,7 @@
   align-items: center;
   background: rgba(204, 204, 204, 0.66);
   box-shadow: inset 0px 0px 68px rgba(255, 255, 255, 0.05), inset 0px 4px 4px rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   border-radius: 10px;
 
   &__item {
@@ -26,7 +26,7 @@
     }
 
     &--active {
-      box-shadow: -6px -6px 4px rgba(255, 255, 255, 0.16), 6px 6px 11px rgba(51, 51, 51, 0.08);
+      //box-shadow: -6px -6px 4px rgba(255, 255, 255, 0.16), 6px 6px 11px rgba(51, 51, 51, 0.08);
       background: #ffffff;
 
       &:hover {

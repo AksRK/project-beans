@@ -1,5 +1,5 @@
 import './OurProjects.scss'
-import weImg from "../../assets/images/handwritte/we.svg";
+import weImg from "../../assets/images/handwritte/ru/we.svg";
 
 function OurProjects() {
 
