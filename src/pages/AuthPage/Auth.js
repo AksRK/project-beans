@@ -13,7 +13,6 @@ function Auth() {
                 АВТОРИЗАЦИЯ
                 <div style={{height:'80vh'}}></div>
             </section>
-            <section style={{minHeight:'200px'}} className={'page__item page__item--black'}></section>
         </div>
     )
 }

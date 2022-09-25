@@ -8,12 +8,20 @@ import caseImg4 from '../../assets/images/cases-img/case-img-4.svg'
 import caseImg5 from '../../assets/images/cases-img/case-img-5.svg'
 import caseImg6 from '../../assets/images/cases-img/case-img-6.svg'
 import caseImgHand from '../../assets/images/cases-img/case-img-hand.svg'
+import {useState} from "react";
 
 function Cases() {
+    const [handAnimPos, setHandAnimPos] = useState(0)
 
     const handleScroll = event => {
         const hand = document.getElementById('hand-anim')
-        hand.style.top = '-'+(event.target.scrollTop / 6)+'px'
+        // hand.style.top = '-'+(event.target.scrollTop / 6) + 'px'
+        hand.style.top = '-'+((event.target.scrollTop - 180) / 6) + 'px'
+
+        if (event.target.scrollTop >= 100) {
+
+        }
+
     }
 
     return (
@@ -169,7 +177,6 @@ function Cases() {
                     </div>
                 </section>
             </section>
-            <section style={{minHeight:'200px'}} className={'page__item page__item--black'}></section>
         </div>
     )
 }

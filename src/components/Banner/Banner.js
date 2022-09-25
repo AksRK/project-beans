@@ -6,23 +6,23 @@ import andManagersImg from '../../assets/images/handwritte/ru/and-managers.svg'
 import PopUp from "../UI/PopUp/PopUp";
 
 function Banner() {
+    const mobVersion = 479
 
     return (
         <section className={'banner'}>
             <h2 className={'page-title'}>
                 Команда
-                <img src={designersImg} alt={'Дизайнеров'}/>
-                {/*<img src={andImg} alt={'И'}/>*/}
-                {/*<img src={managersImg} alt={'Менеджеров'}/>*/}
-                <img src={andManagersImg} alt={'И менеджеров'}/>
-                <span style={{marginRight:'20px'}}>для</span>
+                <span className={'beans-style beans-style--page-title'}> дизайнеров</span>
+                <span className={'beans-style beans-style--page-title'}>и</span>
+                <span className={'beans-style beans-style--page-title'}>менеджеров</span>
+                <span>для</span>
                 <span>запуска вашего продукта
                 <PopUp
                     mark={'1'}
                     text={'Продукт — это то, что вы хотите продать,' +
                         ' и мы помогаем ему «зайти в рынок» и масштабироваться.'}
                     windowPosition={{left: '60px', bottom:'-85px'}}
-                    markPosition={window.screen.width <= 420 ? {top:'-15px'}: {top:'-25px'}}
+                    markPosition={window.screen.width <= mobVersion? {top:'-15px'}: {top:'-30px'}}
                 />
                 </span>
 

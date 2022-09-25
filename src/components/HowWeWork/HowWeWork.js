@@ -24,7 +24,10 @@ function HowWeWork() {
     return (
         <section className={'how-we-work'}>
             <h4 className={'section-title'}>
-                <img src={ourImg} alt={'Наш'}/>
+                {/*<img src={ourImg} alt={'Наш'}/>*/}
+                <span className={'beans-style beans-style--section-title'}>
+                    наш
+                </span>
                 метод ⋅
             </h4>
 

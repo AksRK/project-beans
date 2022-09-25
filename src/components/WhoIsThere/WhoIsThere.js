@@ -6,7 +6,10 @@ function WhoIsThere() {
     return (
         <section className={'who-is-there'}>
             <h4 className={'who-is-there__title'}>
-                <img src={whoImg} alt={'Кто'}/>
+                {/*<img src={whoImg} alt={'Кто'}/>*/}
+                <span className={'beans-style beans-style--section-title'}>
+                    кто
+                </span>
                 здесь ⋅
             </h4>
             <div className={'who-is-there__img-box'}>

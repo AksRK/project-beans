@@ -161,9 +161,18 @@
 }
 
 @font-face {
-  font-family: 'Inter V';
+  font-family: 'Inter';
   src: url('./fonts/Inter/InterV.woff2') format('woff2'),
   url('./fonts/Inter/InterV.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Beans';
+  src: url('./fonts/Beans/BeansRegular.woff2') format('woff2'),
+  url('./fonts/Beans/BeansRegular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

@@ -65,6 +65,10 @@ code {
     padding: 20px 57px 50px 57px;
     border-radius: 30px;
 
+    &:last-child {
+      margin-bottom: 130px;
+    }
+
     &--black {
       background: #000000;
       padding: 35px 0;
@@ -91,67 +95,6 @@ code {
     opacity: 100%;
   }
 }
-
-//.link {
-//  width: fit-content;
-//  position: relative;
-//  font-weight: 400;
-//  font-size: 17px;
-//  line-height: 20px;
-//  color: #828282;
-//  transition: all 0.3s ease-in-out;
-//  cursor: pointer;
-//
-//  &::before {
-//    content: '';
-//    position: absolute;
-//    bottom: -3%;
-//    width: 100%;
-//    border-bottom: 1px solid #828282;
-//    transition: all 0.3s ease-in-out;
-//  }
-//
-//  &:hover {
-//    color: #333333;
-//
-//    &::before {
-//      border-color: #333333;
-//    }
-//  }
-//
-//  &--blue-dtd {
-//    color: #175CF5;
-//
-//    &::before {
-//      border-bottom: 1px dashed rgba(23, 92, 245, 0.4);
-//    }
-//  }
-//
-//  &--blue-solid {
-//    color: #175CF5;
-//
-//    &::before {
-//      border-bottom: 1px solid rgba(23, 92, 245, 0.4);
-//    }
-//  }
-//
-//  &--white-solid {
-//    color: #ffffff;
-//
-//    &::before {
-//      border-bottom: 1px solid rgba(255, 255, 255, 0.4);;
-//    }
-//  }
-//
-//  &--size-52px {
-//    font-size: 52px;
-//    line-height: 63px;
-//  }
-//
-//  &--size-22px {
-//    font-size: 22px;
-//  }
-//}
 
 .link {
   width: fit-content;
@@ -316,16 +259,35 @@ code {
   color: #333333;
   display: inline-flex;
   justify-content: flex-start;
+  gap: 0 20px;
   flex-wrap: wrap;
   align-items: center;
   white-space: pre-line;
 
-  & img {
-    margin: 0 20px;
+  //& img {
+  //  margin: 0 20px;
+  //
+  //  &:first-child {
+  //    margin-left: 40px;
+  //  }
+  //}
 
-    &:first-child {
-      margin-left: 40px;
-    }
+}
+
+.beans-style {
+  position: relative;
+  font-family: Beans;
+  font-weight: bold;
+
+
+  &--page-title {
+    font-size: 35px;
+    bottom: -7px;
+  }
+
+  &--section-title {
+    font-size: 18px;
+    bottom: -3px;
   }
 }
 
@@ -485,9 +447,9 @@ code {
     &__item {
       padding: 19px 16px 30px 16px;
 
-      &:last-child {
-        margin-bottom: 100px;
-      }
+      //&:last-child {
+      //  margin-bottom: 100px;
+      //}
     }
 
     &-title {
@@ -505,12 +467,19 @@ code {
       }
     }
   }
+
+  .beans-style {
+    &--page-title {
+      font-size: 19px;
+    }
+  }
 }
 
 @media (max-width: 479px) {
   .page-title {
     font-size: 32px;
     line-height: 36px;
+    gap: 0 19px;
 
     & img {
 
@@ -525,7 +494,7 @@ code {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 400px) {
   .page-title {
 
     & img {
@@ -534,6 +503,12 @@ code {
       &:first-child {
         margin-left: 10px;
       }
+    }
+  }
+
+  .beans-style {
+    &--page-title {
+      font-size: 17px;
     }
   }
 }

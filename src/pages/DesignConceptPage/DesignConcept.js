@@ -175,7 +175,6 @@ function DesignConcept() {
                     </section>
                 </section>
             </section>
-            <section style={{minHeight:'200px'}} className={'page__item page__item--black'}></section>
         </div>
     )
 }

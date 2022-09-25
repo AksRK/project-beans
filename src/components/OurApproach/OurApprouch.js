@@ -164,7 +164,10 @@ function OurApprouch() {
     return (
         <section className={'our-approuch'}>
             <div className={'section-title'}>
-                <img src={ourImg} alt="Наш"/>
+                {/*<img src={ourImg} alt="Наш"/>*/}
+                <span className={'beans-style beans-style--section-title'}>
+                    наш
+                </span>
                 <span>подход</span>
                 <span>к вашей задаче</span>
             </div>

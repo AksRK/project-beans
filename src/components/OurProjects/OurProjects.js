@@ -30,7 +30,10 @@ function OurProjects() {
     return (
         <section className={'our-projects'}>
             <div className={'section-title section-title--width-500'}>
-                <img src={weImg} alt="Мы"/>
+                {/*<img src={weImg} alt="Мы"/>*/}
+                <span className={'beans-style beans-style--section-title'}>
+                    мы
+                </span>
                 <span> — продуктовая команда,</span>
                 <span>и у нас есть собственные проекты</span>
             </div>
