@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project-beans/static/css/main.4bce167f.css",
-    "main.js": "/project-beans/static/js/main.3b6cf809.js",
+    "main.css": "/project-beans/static/css/main.b2e80f57.css",
+    "main.js": "/project-beans/static/js/main.30e1194e.js",
     "static/media/mini-course-visual-5.svg": "/project-beans/static/media/mini-course-visual-5.54424c02cc5095185696fe9f29c04538.svg",
     "static/media/mini-course-banner.svg": "/project-beans/static/media/mini-course-banner.12162ec7a078c07bac5de74793401819.svg",
     "static/media/mini-course-visual-5-mob.svg": "/project-beans/static/media/mini-course-visual-5-mob.aafc18b209ec3d33ee028d15d898d223.svg",
@@ -74,6 +74,7 @@
     "static/media/serv-cat-11.svg": "/project-beans/static/media/serv-cat-11.f78a74263c1853b5446be0c9df5d9590.svg",
     "static/media/case-img-6.svg": "/project-beans/static/media/case-img-6.7e47d0e2664bebe601e5e325a1d2bdae.svg",
     "static/media/name-and-logo-in-the-trash-17.svg": "/project-beans/static/media/name-and-logo-in-the-trash-17.b51e8b42956bcbb470734bf8bb4071a8.svg",
+    "static/media/BeansRegular.woff": "/project-beans/static/media/BeansRegular.4be5904bdefef0fcdf31.woff",
     "static/media/managers.svg": "/project-beans/static/media/managers.c56e47ac38f9993fb45d50b1b45cb694.svg",
     "static/media/designers.svg": "/project-beans/static/media/designers.1671d81d8699bcee410680c36327611b.svg",
     "static/media/serv-cat-8.svg": "/project-beans/static/media/serv-cat-8.e7c7a9744a77f47744dd47a774e7914c.svg",
@@ -82,6 +83,7 @@
     "static/media/name-and-logo-in-the-trash-2.svg": "/project-beans/static/media/name-and-logo-in-the-trash-2.3731bc5f0867e820fe0ef8360ad089a2.svg",
     "static/media/serv-cat-10.svg": "/project-beans/static/media/serv-cat-10.b296a8a6ac2ed8ed8e4614a0a9b0d29b.svg",
     "static/media/serv-cat-1.svg": "/project-beans/static/media/serv-cat-1.e6567bad3b6554d0851f93680e062d36.svg",
+    "static/media/BeansRegular.woff2": "/project-beans/static/media/BeansRegular.cc03422b46918a4aaf42.woff2",
     "static/media/name-and-logo-in-the-trash-7.svg": "/project-beans/static/media/name-and-logo-in-the-trash-7.e1ca372bd5c6d3a7e43247c26914a611.svg",
     "static/media/name-and-logo-in-the-trash-1.svg": "/project-beans/static/media/name-and-logo-in-the-trash-1.f04516f74f38432188c1726373802b75.svg",
     "static/media/name-and-logo-in-the-trash-9.svg": "/project-beans/static/media/name-and-logo-in-the-trash-9.62ffbb7cafe52316328105b91bb287c6.svg",
@@ -106,11 +108,11 @@
     "static/media/and.svg": "/project-beans/static/media/and.ac830d1d504153bec66fc64dc6676815.svg",
     "static/media/case-img-3.svg": "/project-beans/static/media/case-img-3.f0663dabd092935392c0f2756ffd3803.svg",
     "static/media/case-img-2.svg": "/project-beans/static/media/case-img-2.79d00893d5856536ced41ead1783c00a.svg",
-    "main.4bce167f.css.map": "/project-beans/static/css/main.4bce167f.css.map",
-    "main.3b6cf809.js.map": "/project-beans/static/js/main.3b6cf809.js.map"
+    "main.b2e80f57.css.map": "/project-beans/static/css/main.b2e80f57.css.map",
+    "main.30e1194e.js.map": "/project-beans/static/js/main.30e1194e.js.map"
   },
   "entrypoints": [
-    "static/css/main.4bce167f.css",
-    "static/js/main.3b6cf809.js"
+    "static/css/main.b2e80f57.css",
+    "static/js/main.30e1194e.js"
   ]
 }
