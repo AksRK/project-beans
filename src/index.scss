@@ -259,7 +259,7 @@ code {
   color: #333333;
   display: inline-flex;
   justify-content: flex-start;
-  gap: 0 20px;
+  gap: 0 19px;
   flex-wrap: wrap;
   align-items: center;
   white-space: pre-line;
@@ -446,10 +446,6 @@ code {
 
     &__item {
       padding: 19px 16px 30px 16px;
-
-      //&:last-child {
-      //  margin-bottom: 100px;
-      //}
     }
 
     &-title {
@@ -477,6 +473,7 @@ code {
 
 @media (max-width: 479px) {
   .page-title {
+    max-width: 371px;
     font-size: 32px;
     line-height: 36px;
     gap: 0 19px;
@@ -496,6 +493,7 @@ code {
 
 @media (max-width: 400px) {
   .page-title {
+    max-width: 350px;
 
     & img {
       max-width: 180px;

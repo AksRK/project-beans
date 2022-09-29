@@ -1,5 +1,5 @@
 import './ModalWindow.scss'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 function ModalWindow({view}) {
     const [paymentTerm, setPaymentTerm] = useState(false)
@@ -243,7 +243,7 @@ function ModalWindow({view}) {
             <div className={'modal-window'}>
                 <div onClick={closeModal} className={'btn-close'}></div>
                 <div className={'modal-window__head'}>Заявка на обсуждение проекта</div>
-                <div className={'modal-window__body'}>
+                <div style={popUpPlanningScheduleView ? {overflow:'hidden'}:{}} className={'modal-window__body'}>
                     {popUpPlanningSchedule()}
                     <h2 className={'modal-title'}>
                         Наша команда готова стартовать ваш проект в ближайший понедельник

@@ -1,4 +1,3 @@
-import ourImg from "../../assets/images/handwritte/ru/our.svg";
 import './HowWeWork.scss'
 import {useState} from "react";
 import PopUp from "../UI/PopUp/PopUp";

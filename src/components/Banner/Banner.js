@@ -1,8 +1,4 @@
 import './Banner.scss'
-import designersImg from "../../assets/images/handwritte/ru/designers.svg";
-import andImg from "../../assets/images/handwritte/ru/and.svg";
-import managersImg from "../../assets/images/handwritte/ru/managers.svg";
-import andManagersImg from '../../assets/images/handwritte/ru/and-managers.svg'
 import PopUp from "../UI/PopUp/PopUp";
 
 function Banner() {

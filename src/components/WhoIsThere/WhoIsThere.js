@@ -1,12 +1,10 @@
 import './WhoIsThere.scss'
-import whoImg from "../../assets/images/handwritte/ru/who.svg";
 
 function WhoIsThere() {
 
     return (
         <section className={'who-is-there'}>
             <h4 className={'who-is-there__title'}>
-                {/*<img src={whoImg} alt={'Кто'}/>*/}
                 <span className={'beans-style beans-style--section-title'}>
                     кто
                 </span>

@@ -1,4 +1,3 @@
-import ourImg from '../../assets/images/handwritte/ru/our.svg'
 import './OurApprouch.scss'
 import {useState} from "react";
 import Table from "../UI/Table/Table";
